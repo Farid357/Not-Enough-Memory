@@ -16,7 +16,7 @@ namespace NotEnoughMemory.UI
             _button = GetComponent<UnityEngine.UI.Button>();
         }
 
-        public Button Add(UnityAction clickAction)
+        public IButton Add(UnityAction clickAction)
         {
             if (clickAction == null)
                 throw new ArgumentNullException(nameof(clickAction));

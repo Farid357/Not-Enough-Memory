@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using NotEnoughtMemory.Model.Tools.Utils;
+using NotEnoughtMemory.Model.Tools;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +10,10 @@ namespace NotEnoughMemory.Model
     {
         [SerializeField] private List<TelephoneData> _data;
         [SerializeField] private Image _image;
-        [SerializeField] private TelephoneClickEffect _clickEffect;
 
         private int _dataIndex;
         
-        public TelephoneData Data => _data[_dataIndex];
+        public ITelephoneData Data => _data[_dataIndex];
         
         public bool ReadyToSwitchAppearance(int memoryFillingAmount)
         {
@@ -33,7 +32,6 @@ namespace NotEnoughMemory.Model
 
             _dataIndex++;
             TelephoneData appearanceData = _data[_dataIndex];
-            _clickEffect.SwitchPrefab(appearanceData.ParticlePrefab);
             _image.sprite = appearanceData.Icon;
         }
     }

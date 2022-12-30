@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NotEnoughtMemory.Model.Tools.Utils
+namespace NotEnoughtMemory.Model.Tools
 {
     public static class ListUtils
     {

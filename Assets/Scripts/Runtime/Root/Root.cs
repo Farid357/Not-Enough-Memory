@@ -1,8 +1,8 @@
-﻿using Sirenix.OdinInspector;
+﻿using UnityEngine;
 
 namespace NotEnoughMemory.Root
 {
-    public abstract class Root : SerializedMonoBehaviour
+    public abstract class Root : MonoBehaviour
     {
         public abstract void Compose();
     }

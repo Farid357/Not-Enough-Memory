@@ -2,7 +2,7 @@
 {
     public interface ITelephoneView
     {
-        TelephoneData Data { get; }
+        ITelephoneData Data { get; }
         
         bool ReadyToSwitchAppearance(int memoryFillingAmount);
         

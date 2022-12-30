@@ -12,7 +12,7 @@ namespace NotEnoughMemory.Tests
             _readyToSwitchAppearance = readyToSwitchAppearance;
         }
 
-        public TelephoneData Data => ScriptableObject.CreateInstance<TelephoneData>();
+        public ITelephoneData Data => ScriptableObject.CreateInstance<TelephoneData>();
 
         public bool ReadyToSwitchAppearance(int memoryFillingAmount)
         {

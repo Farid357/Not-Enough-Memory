@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NotEnoughtMemory.Model.Tools.Utils
+namespace NotEnoughtMemory.Model.Tools
 {
     public sealed class LessThanOrEqualsToZeroException : Exception
     {

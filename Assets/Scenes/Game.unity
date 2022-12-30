@@ -815,7 +815,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dbd5cecbfd6450da480b664d144096c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particlePrefab: {fileID: 3040915925856596027}
   _spawnPosition: {fileID: 1362092724}
 --- !u!114 &2075225275
 MonoBehaviour:
@@ -829,24 +828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abc8ecdd3f14e8fa1d88e5c8668f597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 2102462795}
-    - {fileID: 1222877652}
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: _telephoneView
-      Entry: 10
-      Data: 0
-    - Name: _memoryView
-      Entry: 10
-      Data: 1
-  _telephone: {fileID: 2102462796}
+  _telephoneView: {fileID: 2102462795}
+  _memoryView: {fileID: 1222877652}
+  _telephoneButton: {fileID: 2102462796}
   _telephoneClickEffect: {fileID: 2075225274}
 --- !u!114 &2075225276
 MonoBehaviour:
@@ -1017,7 +1001,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8e0d3efb97cee0249afa69ded37b0d0c, type: 2}
   - {fileID: 11400000, guid: 27f5a183843661647aa47c5899ad3be4, type: 2}
   _image: {fileID: 2102462793}
-  _clickEffect: {fileID: 2075225274}
 --- !u!114 &2102462796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,8 +1070,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f14a6d5a7e60d44f9dd9ae492b85a9e, type: 3}
---- !u!198 &3040915925856596027 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3735017986533767851, guid: 6f14a6d5a7e60d44f9dd9ae492b85a9e, type: 3}
-  m_PrefabInstance: {fileID: 3040915925856596026}
-  m_PrefabAsset: {fileID: 0}

@@ -1,8 +1,8 @@
 ﻿namespace NotEnoughMemory.Model
 {
-    public interface IMemory
+    public interface IMemory : IReadOnlyMemory
     {
-        int Amount { get; }
+        void Clear();
         
         void Fill(int amount);
     }

@@ -3,7 +3,7 @@
 namespace NotEnoughMemory.Model
 {
     [CreateAssetMenu(menuName = "Create/Telephone Data", fileName = "Telephone Data", order = 0)]
-    public sealed class TelephoneData : ScriptableObject
+    public sealed class TelephoneData : ScriptableObject, ITelephoneData
     {
         [field: SerializeField] public int NeedMemoryFillingAmount { get; private set; }
         

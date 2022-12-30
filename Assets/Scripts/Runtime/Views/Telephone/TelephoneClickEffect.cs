@@ -5,17 +5,19 @@ namespace NotEnoughMemory.Model
 {
     public sealed class TelephoneClickEffect : MonoBehaviour
     {
-        [SerializeField] private ParticleSystem _particlePrefab;
         [SerializeField] private Transform _spawnPosition;
+        private ITelephoneView _telephoneView;
+
+        private ParticleSystem ParticlePrefab => _telephoneView.Data.ParticlePrefab;
         
-        public void SwitchPrefab(ParticleSystem particlePrefab)
+        public void Init(ITelephoneView telephoneView)
         {
-            _particlePrefab = particlePrefab ?? throw new ArgumentNullException(nameof(particlePrefab));
+            _telephoneView = telephoneView ?? throw new ArgumentNullException(nameof(telephoneView));
         }
 
         public void Play()
         {
-            var particle = Instantiate(_particlePrefab, _spawnPosition.position, Quaternion.identity);
+            var particle = Instantiate(ParticlePrefab, _spawnPosition.position, Quaternion.identity);
             particle.Play();
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace NotEnoughtMemory.Model.Tools.Utils
+﻿namespace NotEnoughtMemory.Model.Tools
 {
     public static class FloatUtils
     {
