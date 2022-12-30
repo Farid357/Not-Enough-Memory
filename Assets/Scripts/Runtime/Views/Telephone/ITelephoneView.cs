@@ -7,5 +7,9 @@
         bool ReadyToSwitchAppearance(int memoryFillingAmount);
         
         void SwitchAppearance(int memoryFillingAmount);
+        
+        void SwitchAppearanceToBroken();
+
+        void SwitchAppearanceToFixed();
     }
 }

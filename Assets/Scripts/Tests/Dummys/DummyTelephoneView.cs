@@ -23,5 +23,15 @@ namespace NotEnoughMemory.Tests.Dummys
         {
 
         }
+
+        public void SwitchAppearanceToBroken()
+        {
+            
+        }
+
+        public void SwitchAppearanceToFixed()
+        {
+            
+        }
     }
 }

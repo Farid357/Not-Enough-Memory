@@ -2,26 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a31715e8-009c-48a9-b99a-b89c3083f3a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Memory/Memory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Not Enough Memory/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Not Enough Memory/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Buttons/Button.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Buttons/Button.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Buttons/IButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Buttons/IButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/GameLoop/SystemUpdate/LateSystemUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/GameLoop/SystemUpdate/LateSystemUpdate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Memory.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Memory.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Memory/IMemory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Memory/IMemory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Memory/IMemory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Memory/IMemory.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Memory/IReadOnlyMemory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Memory/IReadOnlyMemory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Memory/IReadOnlyMemory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Memory/IReadOnlyMemory.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Memory/Memory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Memory/Memory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Memory/Memory.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Telephone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Telephone.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Buttons/ClickActions/TelephoneClickAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Buttons/ClickActions/TelephoneClickAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/IMemoryBreaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/ITelephoneBreaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/IMemoryBreaker.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/ITelephoneBreaker.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Memory/IMemory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Memory/IMemory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Memory/Memory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Memory/Memory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/MemoryBreaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/TelephoneBreaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/MemoryBreaker.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/TelephoneBreaker.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Telephone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/Telephone.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Root/TelephoneRoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Root/TelephoneRoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Views/Telephone/TelephoneClickEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Views/Telephone/TelephoneClickEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Views/Telephone/ITelephoneView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Views/Telephone/ITelephoneView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Views/Telephone/TelephoneView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Views/Telephone/TelephoneView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/DummyMemoryView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/DummyMemoryView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/DummyTelephoneView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/DummyTelephoneView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/MemoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/MemoryTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/MemoryBreakerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/TelephoneBreakerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/MemoryBreakerTest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/TelephoneBreakerTest.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +92,7 @@
       <workItem from="1671299559497" duration="594000" />
       <workItem from="1671354792134" duration="2607000" />
       <workItem from="1671382687547" duration="3960000" />
-      <workItem from="1672383713310" duration="4752000" />
+      <workItem from="1672383713310" duration="5651000" />
     </task>
     <servers />
   </component>

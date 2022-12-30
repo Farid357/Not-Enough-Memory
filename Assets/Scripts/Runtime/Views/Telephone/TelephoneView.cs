@@ -9,7 +9,8 @@ namespace NotEnoughMemory.Model
     {
         [SerializeField] private List<TelephoneData> _data;
         [SerializeField] private Image _image;
-
+        [SerializeField] private Sprite _brokenIcon;
+        
         private int _dataIndex;
         
         public ITelephoneData Data => _data[_dataIndex];
@@ -31,6 +32,17 @@ namespace NotEnoughMemory.Model
                 throw new InvalidOperationException("Can't to change appearance!");
 
             _dataIndex++;
+            TelephoneData appearanceData = _data[_dataIndex];
+            _image.sprite = appearanceData.Icon;
+        }
+
+        public void SwitchAppearanceToBroken()
+        {
+            _image.sprite = _brokenIcon;
+        }
+        
+        public void SwitchAppearanceToFixed()
+        {
             TelephoneData appearanceData = _data[_dataIndex];
             _image.sprite = appearanceData.Icon;
         }

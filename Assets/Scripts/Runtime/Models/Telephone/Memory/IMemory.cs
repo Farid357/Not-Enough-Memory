@@ -8,6 +8,8 @@
 
         void Break();
         
+        void Fix();
+        
         void Fill(int amount);
         
     }

@@ -5,31 +5,33 @@ namespace NotEnoughMemory.UI
 {
     public sealed class TelephoneClickAction : IButtonClickAction
     {
-        private readonly IMemoryBreaker _memoryBreaker;
-        private readonly IMemory _memory;
+        private readonly ITelephoneBreaker _telephoneBreaker;
+        private readonly ITelephone _telephone;
         private readonly ITelephoneClickEffect _telephoneClickEffect;
 
-        public TelephoneClickAction(IMemory memory, ITelephoneClickEffect telephoneClickEffect)
+        public TelephoneClickAction(ITelephone telephone, ITelephoneClickEffect telephoneClickEffect)
         {
-            _memory = memory ?? throw new ArgumentNullException(nameof(memory));
-            _telephoneClickEffect = telephoneClickEffect ?? throw new ArgumentNullException(nameof(telephoneClickEffect));
-            _memoryBreaker = new MemoryBreaker();
+            _telephone = telephone ?? throw new ArgumentNullException(nameof(telephone));
+            _telephoneClickEffect =
+                telephoneClickEffect ?? throw new ArgumentNullException(nameof(telephoneClickEffect));
+            _telephoneBreaker = new TelephoneBreaker();
         }
 
         public void OnClick()
         {
             _telephoneClickEffect.Play();
-            
-            if (_memory.IsBroken)
+            var memory = _telephone.Memory;
+
+            if (_telephone.IsBroken)
             {
-                if (_memory.CanClear(1))
-                    _memory.Clear(1);
+                if (memory.CanClear(1))
+                    memory.Clear(1);
             }
-            
+
             else
             {
-                _memory.Fill(1);
-                _memoryBreaker.TryBreak(_memory);
+                memory.Fill(1);
+                _telephoneBreaker.TryBreak(_telephone);
             }
         }
     }

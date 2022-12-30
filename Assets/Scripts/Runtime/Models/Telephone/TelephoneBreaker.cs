@@ -2,29 +2,29 @@
 
 namespace NotEnoughMemory.Model
 {
-    public sealed class MemoryBreaker : IMemoryBreaker
+    public sealed class TelephoneBreaker : ITelephoneBreaker
     {
         private readonly IRandom _random = new Random();
         private readonly IChance _brakeChance;
 
-        public MemoryBreaker(IChance brakeChance)
+        public TelephoneBreaker(IChance brakeChance)
         {
             _brakeChance = brakeChance ?? throw new ArgumentNullException(nameof(brakeChance));
         }
 
-        public MemoryBreaker() : this(new OneQuarterChance())
+        public TelephoneBreaker() : this(new OneQuarterChance())
         {
             
         }
         
-        public bool TryBreak(IMemory memory)
+        public bool TryBreak(ITelephone telephone)
         {
-            if (memory is null)
-                throw new ArgumentNullException(nameof(memory));
+            if (telephone is null)
+                throw new ArgumentNullException(nameof(telephone));
             
             if (_random.TryGetLuckyNumberFrom(_brakeChance))
             {
-                memory.Break();
+                telephone.Break();
                 return true;
             }
 

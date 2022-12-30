@@ -15,7 +15,7 @@ namespace NotEnoughMemory.Model
         public void Fill(int amount)
         {
             if (IsBroken)
-                throw new InvalidOperationException("Telephone is broken, you can't fill it!");
+                throw new InvalidOperationException("Memory is broken, you can't fill it!");
             
             Amount += amount.TryThrowLessThanOrEqualsToZeroException();
             HasAmountChanged = true;
@@ -26,16 +26,24 @@ namespace NotEnoughMemory.Model
         public void Break()
         {
             if (IsBroken)
-                throw new InvalidOperationException("Telephone is already broken!");
+                throw new InvalidOperationException("Memory is already broken!");
             
             IsBroken = true;
         }
 
+        public void Fix()
+        {
+            if (!IsBroken)
+                throw new InvalidOperationException("Memory is already fixed!");
+            
+            IsBroken = false;
+        }
+        
         public bool CanClear(int amount) => Amount - amount >= 0;
 
         public void Clear(int amount)
         {
-            if (CanClear(amount))
+            if (CanClear(amount) == false)
                 throw new InvalidOperationException("Can't clear amount!");
 
             Amount -= amount.TryThrowLessThanOrEqualsToZeroException();

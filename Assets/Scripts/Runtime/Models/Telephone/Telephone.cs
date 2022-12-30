@@ -3,30 +3,53 @@ using NotEnoughMemory.GameLoop;
 
 namespace NotEnoughMemory.Model
 {
-    public sealed class Telephone : IUpdateable
+    public sealed class Telephone : IUpdateable, ITelephone
     {
         private readonly ITelephoneView _telephoneView;
-        private readonly IMemory _memory;
         private readonly IMemoryView _memoryView;
 
         public Telephone(ITelephoneView telephoneView, IMemory memory, IMemoryView memoryView)
         {
             _telephoneView = telephoneView ?? throw new ArgumentNullException(nameof(telephoneView));
-            _memory = memory ?? throw new ArgumentNullException(nameof(memory));
+            Memory = memory ?? throw new ArgumentNullException(nameof(memory));
             _memoryView = memoryView ?? throw new ArgumentNullException(nameof(memoryView));
         }
+        
+        public IMemory Memory { get; }
+        
+        public bool IsBroken { get; private set; }
 
         public void Update(float deltaTime)
         {
-            var memoryFillingAmount = _memory.Amount;
+            var memoryFillingAmount = Memory.Amount;
             var maxMemoryFillingAmount = _telephoneView.Data.NeedMemoryFillingAmount;
-            _memoryView.Visualize(maxMemoryFillingAmount, _memory.Amount);
+            _memoryView.Visualize(maxMemoryFillingAmount, Memory.Amount);
 
             if (_telephoneView.ReadyToSwitchAppearance(memoryFillingAmount))
             {
                 _telephoneView.SwitchAppearance(memoryFillingAmount);
-                _memory.Clear();
+                Memory.Clear();
             }
+        }
+        
+        public void Break()
+        {
+            if (IsBroken)
+                throw new InvalidOperationException("Telephone is already broken!");
+            
+            Memory.Break();
+            _telephoneView.SwitchAppearanceToBroken();
+            IsBroken = true;
+        }
+
+        public void Fix()
+        {
+            if (!IsBroken)
+                throw new InvalidOperationException("Telephone is already fixed!");
+            
+            Memory.Fix();
+            _telephoneView.SwitchAppearanceToFixed();
+            IsBroken = false;
         }
     }
 }

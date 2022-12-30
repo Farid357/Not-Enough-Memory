@@ -20,7 +20,7 @@ namespace NotEnoughMemory.Root
             var telephone = new Telephone(_telephoneView, _memory, _memoryView);
             _telephoneButton.Init();
             _telephoneClickEffect.Init(_telephoneView);
-            var telephoneCLickAction = new TelephoneClickAction(_memory, _telephoneClickEffect);
+            var telephoneCLickAction = new TelephoneClickAction(telephone, _telephoneClickEffect);
             _telephoneButton.Add(telephoneCLickAction);
             _systemUpdate.Add(telephone);
             _lateSystemUpdate.Add(_memory);
