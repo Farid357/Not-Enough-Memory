@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace NotEnoughMemory.Model
 {
-    public sealed class TelephoneClickEffect : MonoBehaviour
+    public sealed class TelephoneClickEffect : MonoBehaviour, ITelephoneClickEffect
     {
         [SerializeField] private Transform _spawnPosition;
         private ITelephoneView _telephoneView;

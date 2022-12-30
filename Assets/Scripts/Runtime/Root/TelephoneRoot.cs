@@ -12,21 +12,28 @@ namespace NotEnoughMemory.Root
         [SerializeField] private Button _telephoneButton;
         [SerializeField] private TelephoneClickEffect _telephoneClickEffect;
         private readonly ISystemUpdate _systemUpdate = new SystemUpdate();
-        private readonly ILateUpdateable _lateSystemUpdate = new LateSystemUpdate();
-        
+        private readonly ILateSystemUpdate _lateSystemUpdate = new LateSystemUpdate();
+        private readonly Memory _memory = new();
+
         public override void Compose()
         {
-            var memory = new Memory();
-            var telephone = new Telephone(_telephoneView, memory, _memoryView);
+            var telephone = new Telephone(_telephoneView, _memory, _memoryView);
             _telephoneButton.Init();
             _telephoneClickEffect.Init(_telephoneView);
-            _telephoneButton.Add(_telephoneClickEffect.Play).Add(() => memory.Fill(1));
+            var telephoneCLickAction = new TelephoneClickAction(_memory, _telephoneClickEffect);
+            _telephoneButton.Add(telephoneCLickAction);
             _systemUpdate.Add(telephone);
+            _lateSystemUpdate.Add(_memory);
         }
 
         private void Update()
         {
             _systemUpdate.Update(Time.deltaTime);
+        }
+
+        private void LateUpdate()
+        {
+            _lateSystemUpdate.LateUpdate(Time.deltaTime);
         }
     }
 }

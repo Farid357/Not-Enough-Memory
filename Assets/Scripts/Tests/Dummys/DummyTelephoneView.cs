@@ -1,7 +1,7 @@
 ﻿using NotEnoughMemory.Model;
 using UnityEngine;
 
-namespace NotEnoughMemory.Tests
+namespace NotEnoughMemory.Tests.Dummys
 {
     public sealed class DummyTelephoneView : ITelephoneView
     {

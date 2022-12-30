@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using NotEnoughtMemory.Model.Tools;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +16,8 @@ namespace NotEnoughMemory.Model
         
         public bool ReadyToSwitchAppearance(int memoryFillingAmount)
         {
-            memoryFillingAmount.TryThrowLessThanOrEqualsToZeroException();
+            if (memoryFillingAmount < 0) 
+                throw new ArgumentOutOfRangeException(nameof(memoryFillingAmount));
             
             if (_dataIndex + 1 == _data.Count)
                 return false;

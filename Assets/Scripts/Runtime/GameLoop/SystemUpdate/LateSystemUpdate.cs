@@ -4,7 +4,7 @@ using NotEnoughtMemory.Model.Tools;
 
 namespace NotEnoughMemory.GameLoop
 {
-    public sealed class LateSystemUpdate : ILateUpdateable
+    public sealed class LateSystemUpdate : ILateSystemUpdate
     {
         private readonly IList<ILateUpdateable> _updateables = new List<ILateUpdateable>();
         

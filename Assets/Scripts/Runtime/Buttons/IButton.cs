@@ -4,6 +4,6 @@ namespace NotEnoughMemory.UI
 {
     public interface IButton
     {
-        IButton Add(UnityAction clickAction);
+        IButton Add(IButtonClickAction clickAction);
     }
 }

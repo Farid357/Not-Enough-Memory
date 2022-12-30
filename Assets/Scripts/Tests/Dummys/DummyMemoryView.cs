@@ -1,6 +1,6 @@
 ﻿using NotEnoughMemory.Model;
 
-namespace NotEnoughMemory.Tests
+namespace NotEnoughMemory.Tests.Dummys
 {
     public sealed class DummyMemoryView : IMemoryView
     {

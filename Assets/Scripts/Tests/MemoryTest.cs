@@ -5,21 +5,29 @@ namespace NotEnoughMemory.Tests
 {
     public sealed class MemoryTest
     {
-        private readonly IMemory _memory = new Memory();
-        
         [Test]
         public void FillsCorrectly()
         {
-            _memory.Fill(1);
-            Assert.That(_memory.Amount == 1);
+            IMemory memory = new Memory();
+            memory.Fill(1);
+            Assert.That(memory.Amount == 1);
         }
 
         [Test]
         public void CleansCorrectly()
         {
-            _memory.Fill(1);
-            _memory.Clear();
-            Assert.That(_memory.Amount == 0);
+            IMemory memory = new Memory();
+            memory.Fill(1);
+            memory.Clear();
+            Assert.That(memory.Amount == 0);
+        }
+
+        [Test]
+        public void BrakesCorrectly()
+        {
+            IMemory memory = new Memory();
+            memory.Break();
+            Assert.That(memory.IsBroken);
         }
     }
 }

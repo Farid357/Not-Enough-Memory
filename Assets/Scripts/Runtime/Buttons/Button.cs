@@ -8,7 +8,7 @@ namespace NotEnoughMemory.UI
     [RequireComponent(typeof(UnityEngine.UI.Button))]
     public sealed class Button : MonoBehaviour, IButton
     {
-        private readonly List<UnityAction> _clickActions = new();
+        private readonly IList<IButtonClickAction> _clickActions = new List<IButtonClickAction>();
         private UnityEngine.UI.Button _button;
 
         public void Init()
@@ -16,12 +16,12 @@ namespace NotEnoughMemory.UI
             _button = GetComponent<UnityEngine.UI.Button>();
         }
 
-        public IButton Add(UnityAction clickAction)
+        public IButton Add(IButtonClickAction clickAction)
         {
             if (clickAction == null)
                 throw new ArgumentNullException(nameof(clickAction));
 
-            _button.onClick.AddListener(clickAction);
+            _button.onClick.AddListener(clickAction.OnClick);
             _clickActions.Add(clickAction);
             return this;
         }
@@ -30,7 +30,7 @@ namespace NotEnoughMemory.UI
         {
             foreach (var clickAction in _clickActions)
             {
-                _button.onClick.RemoveListener(clickAction);
+                _button.onClick.RemoveListener(clickAction.OnClick);
             }
             
             _clickActions.Clear();
