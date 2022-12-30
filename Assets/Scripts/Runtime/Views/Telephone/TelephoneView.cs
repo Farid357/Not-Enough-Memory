@@ -9,7 +9,6 @@ namespace NotEnoughMemory.Model
     {
         [SerializeField] private List<TelephoneData> _data;
         [SerializeField] private Image _image;
-        [SerializeField] private Sprite _brokenIcon;
         
         private int _dataIndex;
         
@@ -38,7 +37,7 @@ namespace NotEnoughMemory.Model
 
         public void SwitchAppearanceToBroken()
         {
-            _image.sprite = _brokenIcon;
+            _image.sprite = _data[_dataIndex].BrokenIcon;
         }
         
         public void SwitchAppearanceToFixed()
