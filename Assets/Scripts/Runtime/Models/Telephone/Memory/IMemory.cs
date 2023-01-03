@@ -1,6 +1,8 @@
-﻿namespace NotEnoughMemory.Model
+﻿using NotEnoughMemory.GameLoop;
+
+namespace NotEnoughMemory.Model
 {
-    public interface IMemory : IReadOnlyMemory
+    public interface IMemory : IReadOnlyMemory, ILateUpdateable
     {
         void Clear();
 

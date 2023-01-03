@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using NotEnoughtMemory.Model.Tools;
 
 namespace NotEnoughMemory.GameLoop
 {
-    public sealed class FixedSystemUpdate : IFixedUpdateable
+    public sealed class FixedSystemUpdate : IFixedSystemUpdate
     {
-        private readonly IList<IFixedUpdateable> _updateables = new List<IFixedUpdateable>();
+        private readonly List<IFixedUpdateable> _updateables = new();
+        
+        public IReadOnlyList<IFixedUpdateable> Updateables => _updateables;
 
         public void FixedUpdate(float fixedDeltaTime)
         {

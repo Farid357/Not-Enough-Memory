@@ -1,9 +1,8 @@
 ﻿using System;
-using NotEnoughMemory.GameLoop;
 
 namespace NotEnoughMemory.Model
 {
-    public sealed class Telephone : IUpdateable, ITelephone
+    public sealed class Telephone : ITelephone
     {
         private readonly ITelephoneView _telephoneView;
         private readonly IMemoryView _memoryView;

@@ -9,11 +9,10 @@ namespace NotEnoughMemory.Model
     {
         [SerializeField] private List<TelephoneData> _data;
         [SerializeField] private Image _image;
-        
         private int _dataIndex;
         
         public ITelephoneData Data => _data[_dataIndex];
-        
+
         public bool ReadyToSwitchAppearance(int memoryFillingAmount)
         {
             if (memoryFillingAmount < 0) 

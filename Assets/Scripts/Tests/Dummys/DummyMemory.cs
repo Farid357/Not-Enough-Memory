@@ -31,5 +31,10 @@ namespace NotEnoughMemory.Tests.Dummys
         public void Fill(int amount)
         {
         }
+
+        public void LateUpdate(float deltaTime)
+        {
+            
+        }
     }
 }

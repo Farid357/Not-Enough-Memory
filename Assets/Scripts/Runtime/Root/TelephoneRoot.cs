@@ -1,39 +1,31 @@
-﻿using NotEnoughMemory.GameLoop;
+﻿using System;
+using NotEnoughMemory.Factories;
 using NotEnoughMemory.Model;
 using NotEnoughMemory.UI;
-using UnityEngine;
 
 namespace NotEnoughMemory.Root
 {
-    public sealed class TelephoneRoot : Root
+    public sealed class TelephoneRoot : IRoot
     {
-        [SerializeField] private TelephoneView _telephoneView;
-        [SerializeField] private MemoryView _memoryView;
-        [SerializeField] private Button _telephoneButton;
-        [SerializeField] private TelephoneClickEffect _telephoneClickEffect;
-        private readonly ISystemUpdate _systemUpdate = new SystemUpdate();
-        private readonly ILateSystemUpdate _lateSystemUpdate = new LateSystemUpdate();
-        private readonly Memory _memory = new();
+        private readonly ITelephone _telephone;
+        private readonly ITelephoneClickEffect _telephoneClickEffect;
+        private readonly IGameUpdate _gameUpdate;
+        private readonly IButton _telephoneButton;
 
-        public override void Compose()
+        public TelephoneRoot(IFactory<ITelephone> telephoneFactory, IGameUpdate gameUpdate, ITelephoneClickEffect telephoneClickEffect)
         {
-            var telephone = new Telephone(_telephoneView, _memory, _memoryView);
+            _telephoneClickEffect = telephoneClickEffect ?? throw new ArgumentNullException(nameof(telephoneClickEffect));
+            _gameUpdate = gameUpdate ?? throw new ArgumentNullException(nameof(gameUpdate));
+            _telephone = telephoneFactory.Create();
+        }
+        
+        public void Compose()
+        {
             _telephoneButton.Init();
-            _telephoneClickEffect.Init(_telephoneView);
-            var telephoneCLickAction = new TelephoneClickAction(telephone, _telephoneClickEffect);
+            IButtonClickAction telephoneCLickAction = new TelephoneClickAction(_telephone, _telephoneClickEffect);
             _telephoneButton.Add(telephoneCLickAction);
-            _systemUpdate.Add(telephone);
-            _lateSystemUpdate.Add(_memory);
-        }
-
-        private void Update()
-        {
-            _systemUpdate.Update(Time.deltaTime);
-        }
-
-        private void LateUpdate()
-        {
-            _lateSystemUpdate.LateUpdate(Time.deltaTime);
+            _gameUpdate.SystemUpdate.Add(_telephone);
+            _gameUpdate.LateSystemUpdate.Add(_telephone.Memory);
         }
     }
 }

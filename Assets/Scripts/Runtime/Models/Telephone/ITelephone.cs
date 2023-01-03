@@ -1,6 +1,8 @@
-﻿namespace NotEnoughMemory.Model
+﻿using NotEnoughMemory.GameLoop;
+
+namespace NotEnoughMemory.Model
 {
-    public interface ITelephone
+    public interface ITelephone : IUpdateable
     {
         bool IsBroken { get; }
         

@@ -1,10 +1,9 @@
 ﻿using System;
-using NotEnoughMemory.GameLoop;
 using NotEnoughtMemory.Model.Tools;
 
 namespace NotEnoughMemory.Model
 {
-    public sealed class Memory : IMemory, ILateUpdateable
+    public sealed class Memory : IMemory
     {
         public bool IsBroken { get; private set; }
         

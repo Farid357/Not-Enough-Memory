@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using NotEnoughtMemory.Model.Tools;
 
 namespace NotEnoughMemory.GameLoop
 {
     public sealed class LateSystemUpdate : ILateSystemUpdate
     {
-        private readonly IList<ILateUpdateable> _updateables = new List<ILateUpdateable>();
+        private readonly List<ILateUpdateable> _updateables = new();
+
+        public IReadOnlyList<ILateUpdateable> Updateables => _updateables;
         
         public void LateUpdate(float deltaTime)
         {

@@ -6,7 +6,7 @@
         
         public bool IsLucky()
         {
-            return _random.Next(0, 1) == 0;
+            return _random.Next(0, 2) == 0;
         }
     }
 }

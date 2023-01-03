@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using NotEnoughtMemory.Model.Tools;
 
 namespace NotEnoughMemory.GameLoop
 {
     public sealed class SystemUpdate : ISystemUpdate
     {
-        private readonly IList<IUpdateable> _updateables;
+        private readonly List<IUpdateable> _updateables;
 
-        public SystemUpdate(IList<IUpdateable> updateables)
+        public SystemUpdate(List<IUpdateable> updateables)
         {
             _updateables = updateables ?? throw new ArgumentNullException(nameof(updateables));
         }
@@ -16,6 +15,8 @@ namespace NotEnoughMemory.GameLoop
         public SystemUpdate() : this(new List<IUpdateable>())
         {
         }
+
+        public IReadOnlyList<IUpdateable> Updateables => _updateables;
 
         public void Update(float deltaTime)
         {
@@ -27,10 +28,7 @@ namespace NotEnoughMemory.GameLoop
             if (updateables == null)
                 throw new ArgumentNullException(nameof(updateables));
 
-            foreach (var updateable in updateables)
-            {
-                _updateables.Add(updateable);
-            }
+            _updateables.AddRange(updateables);
         }
 
         public void Remove(IUpdateable updateable)

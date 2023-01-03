@@ -12,8 +12,7 @@ namespace NotEnoughMemory.UI
         public TelephoneClickAction(ITelephone telephone, ITelephoneClickEffect telephoneClickEffect)
         {
             _telephone = telephone ?? throw new ArgumentNullException(nameof(telephone));
-            _telephoneClickEffect =
-                telephoneClickEffect ?? throw new ArgumentNullException(nameof(telephoneClickEffect));
+            _telephoneClickEffect = telephoneClickEffect ?? throw new ArgumentNullException(nameof(telephoneClickEffect));
             _telephoneBreaker = new TelephoneBreaker();
         }
 
