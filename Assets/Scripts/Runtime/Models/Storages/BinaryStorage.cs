@@ -5,7 +5,7 @@ using NotEnoughtMemory.Model.Tools;
 
 namespace NotEnoughMemory.Storage
 {
-    public sealed class BinaryStorage<TStoreValue> : IStorage<TStoreValue>
+    public sealed class BinaryStorage<TStoreValue> : ISaveStorage<TStoreValue>
     {
         private readonly BinaryFormatter _formatter = new();
         private readonly string _pathName;

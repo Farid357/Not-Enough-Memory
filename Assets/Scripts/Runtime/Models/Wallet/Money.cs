@@ -6,29 +6,24 @@ namespace NotEnoughMemory.Model
     [Serializable]
     public sealed class Money
     {
-        public Money(int value)
+        public Money(int amount)
         {
-            Value = value.TryThrowLessThanOrEqualsToZeroException();
+            Amount = amount.TryThrowLessThanOrEqualsToZeroException();
         }
         
-        public int Value { get; }
+        public int Amount { get; }
         
         public static Money operator -(Money moneyA, Money moneyB)
         {
-            return new Money(moneyA.Value - moneyB.Value);
+            return new Money(moneyA.Amount - moneyB.Amount);
         }
         
         public static Money operator +(Money moneyA, Money moneyB)
         {
-            return new Money(moneyA.Value + moneyB.Value);
+            return new Money(moneyA.Amount + moneyB.Amount);
         }
 
-        public static implicit operator int(Money money) => money.Value;
+        public static implicit operator int(Money money) => money.Amount;
         
-        public override bool Equals(object obj)
-        {
-            var money = (Money)obj;
-            return Value == money.Value;
-        }
     }
 }

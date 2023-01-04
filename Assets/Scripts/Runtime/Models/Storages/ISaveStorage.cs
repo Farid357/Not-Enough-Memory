@@ -1,13 +1,10 @@
 namespace NotEnoughMemory.Storage
 {
-    public interface IStorage<TStoreValue>
+    public interface ISaveStorage<TStoreValue> : ICanDeleteSaveStorage
     {
-        bool HasSave();
-        
         TStoreValue Load();
 
         void Save(TStoreValue saveObject);
 
-        void DeleteSave();
     }
 }

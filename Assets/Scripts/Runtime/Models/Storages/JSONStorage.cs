@@ -5,7 +5,7 @@ using NotEnoughtMemory.Model.Tools;
 
 namespace NotEnoughMemory.Storage
 {
-    public sealed class JsonStorage<TStoreValue> : IStorage<TStoreValue>
+    public sealed class JsonStorage<TStoreValue> : ISaveStorage<TStoreValue>
     {
         private readonly string _pathName;
 

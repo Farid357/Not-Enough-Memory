@@ -1,33 +1,30 @@
 ﻿using System;
 using NotEnoughMemory.Factories;
 using NotEnoughMemory.GameLoop;
-using NotEnoughMemory.Model;
 using NotEnoughMemory.UI;
 
 namespace NotEnoughMemory.Root
 {
     public sealed class TelephoneRoot : IRoot
     {
-        private readonly ITelephone _telephone;
-        private readonly ITelephoneClickEffect _telephoneClickEffect;
+        private readonly IFactory<ITelephoneButton> _telephoneButtonFactory;
+        private readonly IUnityButtonsData _unityButtons;
         private readonly IGameLoop _gameLoop;
-        private readonly IButton _telephoneButton;
 
-        public TelephoneRoot(IFactory<ITelephone> telephoneFactory, IGameLoop gameLoop, ITelephoneClickEffect telephoneClickEffect, IButton telephoneButton)
+        public TelephoneRoot(IFactory<ITelephoneButton> telephoneButtonFactory, IGameLoop gameLoop, IUnityButtonsData unityButtons)
         {
-            _telephoneClickEffect = telephoneClickEffect ?? throw new ArgumentNullException(nameof(telephoneClickEffect));
-            _telephoneButton = telephoneButton ?? throw new ArgumentNullException(nameof(telephoneButton));
+            _telephoneButtonFactory = telephoneButtonFactory ?? throw new ArgumentNullException(nameof(telephoneButtonFactory));
+            _unityButtons = unityButtons ?? throw new ArgumentNullException(nameof(unityButtons));
             _gameLoop = gameLoop ?? throw new ArgumentNullException(nameof(gameLoop));
-            _telephone = telephoneFactory.Create();
         }
         
         public void Compose()
         {
-            _telephoneButton.Init();
-            IButtonClickAction telephoneCLickAction = new TelephoneClickAction(_telephone, _telephoneClickEffect);
-            _telephoneButton.Add(telephoneCLickAction);
-            _gameLoop.GameUpdate.Add(_telephone);
-            _gameLoop.LateGameUpdate.Add(_telephone.Memory);
+            ITelephoneButton telephoneButton = _telephoneButtonFactory.Create();
+            _unityButtons.Telephone.Init(telephoneButton);
+            var telephone = telephoneButton.Telephone;
+            _gameLoop.GameUpdate.Add(telephone);
+            _gameLoop.LateGameUpdate.Add(telephone.Memory);
         }
     }
 }

@@ -2,8 +2,8 @@
 
 namespace NotEnoughMemory.Root
 {
-    public interface IButtonsData
+    public interface ITextsData
     {
-        IButton Telephone { get; }
+        IText Money { get; }
     }
 }

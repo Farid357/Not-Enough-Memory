@@ -1,6 +1,9 @@
 ﻿using NotEnoughMemory.Factories;
 using NotEnoughMemory.GameLoop;
 using NotEnoughMemory.Model;
+using NotEnoughMemory.Storage;
+using NotEnoughMemory.UI;
+using NotEnoughMemory.View;
 using UnityEngine;
 
 namespace NotEnoughMemory.Root
@@ -13,8 +16,13 @@ namespace NotEnoughMemory.Root
         private void Awake()
         {
             IFactory<ITelephone> telephoneFactory = new TelephoneFactory(_viewData.TelephoneView, _viewData.MemoryView, new Memory());
-            IRoot telephoneRoot = new TelephoneRoot(telephoneFactory, _gameLoop, _viewData.TelephoneClickEffect, _viewData.Buttons.Telephone);
+            var saveStorages = new SaveStorages(_gameLoop);
+            var walletRoot = new WalletRoot(new TextView(_viewData.UI.Texts.Money), saveStorages);
+            var wallet = walletRoot.Compose();
+            IFactory<ITelephoneButton> telephoneButtonFactory = new TelephoneButtonFactory(_viewData.TelephoneClickEffect, wallet, telephoneFactory.Create());
+            IRoot telephoneRoot = new TelephoneRoot(telephoneButtonFactory, _gameLoop, _viewData.UI.UnityButtons);
             telephoneRoot.Compose();
+            saveStorages.Compose(wallet);
         }
 
         private void FixedUpdate()
