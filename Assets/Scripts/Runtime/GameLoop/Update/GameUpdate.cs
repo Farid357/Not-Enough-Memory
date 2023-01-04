@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace NotEnoughMemory.GameLoop
 {
-    public sealed class SystemUpdate : ISystemUpdate
+    public sealed class GameUpdate : IGameUpdate, IUpdateable
     {
         private readonly List<IUpdateable> _updateables;
 
-        public SystemUpdate(List<IUpdateable> updateables)
+        public GameUpdate(List<IUpdateable> updateables)
         {
             _updateables = updateables ?? throw new ArgumentNullException(nameof(updateables));
         }
 
-        public SystemUpdate() : this(new List<IUpdateable>())
+        public GameUpdate() : this(new List<IUpdateable>())
         {
         }
 
@@ -37,7 +37,7 @@ namespace NotEnoughMemory.GameLoop
                 throw new ArgumentNullException(nameof(updateable));
 
             if (_updateables.Contains(updateable) == false)
-                throw new InvalidOperationException($"{nameof(SystemUpdate)} doesn't contain {updateable}");
+                throw new InvalidOperationException($"{nameof(GameUpdate)} doesn't contain {updateable}");
 
             _updateables.Remove(updateable);
         }

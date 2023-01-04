@@ -8,29 +8,28 @@ namespace NotEnoughMemory.Root
     public sealed class EntryPoint : MonoBehaviour
     {
         [SerializeField] private ViewData _viewData;
-        private GameUpdate _gameUpdate;
+        private readonly IGameLoop _gameLoop = new GameLoop.GameLoop();
 
         private void Awake()
         {
-            _gameUpdate = new GameUpdate(new LateSystemUpdate(), new FixedSystemUpdate(), new SystemUpdate());
             IFactory<ITelephone> telephoneFactory = new TelephoneFactory(_viewData.TelephoneView, _viewData.MemoryView, new Memory());
-            IRoot telephoneRoot = new TelephoneRoot(telephoneFactory, _gameUpdate, _viewData.TelephoneClickEffect);
+            IRoot telephoneRoot = new TelephoneRoot(telephoneFactory, _gameLoop, _viewData.TelephoneClickEffect, _viewData.Buttons.Telephone);
             telephoneRoot.Compose();
         }
 
         private void FixedUpdate()
         {
-            _gameUpdate.FixedUpdate(Time.fixedDeltaTime);
+            _gameLoop.FixedUpdate(Time.fixedDeltaTime);
         }
 
         private void Update()
         {
-            _gameUpdate.Update(Time.deltaTime);
+            _gameLoop.Update(Time.deltaTime);
         }
 
         private void LateUpdate()
         {
-            _gameUpdate.LateUpdate(Time.deltaTime);
+            _gameLoop.LateUpdate();
         }
     }
 }

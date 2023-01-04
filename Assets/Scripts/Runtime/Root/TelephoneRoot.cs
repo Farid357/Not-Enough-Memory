@@ -1,5 +1,6 @@
 ﻿using System;
 using NotEnoughMemory.Factories;
+using NotEnoughMemory.GameLoop;
 using NotEnoughMemory.Model;
 using NotEnoughMemory.UI;
 
@@ -9,13 +10,14 @@ namespace NotEnoughMemory.Root
     {
         private readonly ITelephone _telephone;
         private readonly ITelephoneClickEffect _telephoneClickEffect;
-        private readonly IGameUpdate _gameUpdate;
+        private readonly IGameLoop _gameLoop;
         private readonly IButton _telephoneButton;
 
-        public TelephoneRoot(IFactory<ITelephone> telephoneFactory, IGameUpdate gameUpdate, ITelephoneClickEffect telephoneClickEffect)
+        public TelephoneRoot(IFactory<ITelephone> telephoneFactory, IGameLoop gameLoop, ITelephoneClickEffect telephoneClickEffect, IButton telephoneButton)
         {
             _telephoneClickEffect = telephoneClickEffect ?? throw new ArgumentNullException(nameof(telephoneClickEffect));
-            _gameUpdate = gameUpdate ?? throw new ArgumentNullException(nameof(gameUpdate));
+            _telephoneButton = telephoneButton ?? throw new ArgumentNullException(nameof(telephoneButton));
+            _gameLoop = gameLoop ?? throw new ArgumentNullException(nameof(gameLoop));
             _telephone = telephoneFactory.Create();
         }
         
@@ -24,8 +26,8 @@ namespace NotEnoughMemory.Root
             _telephoneButton.Init();
             IButtonClickAction telephoneCLickAction = new TelephoneClickAction(_telephone, _telephoneClickEffect);
             _telephoneButton.Add(telephoneCLickAction);
-            _gameUpdate.SystemUpdate.Add(_telephone);
-            _gameUpdate.LateSystemUpdate.Add(_telephone.Memory);
+            _gameLoop.GameUpdate.Add(_telephone);
+            _gameLoop.LateGameUpdate.Add(_telephone.Memory);
         }
     }
 }

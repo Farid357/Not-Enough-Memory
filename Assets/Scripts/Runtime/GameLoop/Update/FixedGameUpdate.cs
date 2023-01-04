@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NotEnoughMemory.GameLoop
 {
-    public sealed class FixedSystemUpdate : IFixedSystemUpdate
+    public sealed class FixedGameUpdate : IFixedGameUpdate, IFixedUpdateable
     {
         private readonly List<IFixedUpdateable> _updateables = new();
         

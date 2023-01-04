@@ -1,7 +1,8 @@
-﻿using TMPro;
+﻿using NotEnoughMemory.Model;
+using TMPro;
 using UnityEngine;
 
-namespace NotEnoughMemory.Model
+namespace NotEnoughMemory.View
 {
     public sealed class MemoryView : MonoBehaviour, IMemoryView
     {

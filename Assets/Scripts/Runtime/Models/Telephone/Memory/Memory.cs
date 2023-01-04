@@ -49,7 +49,7 @@ namespace NotEnoughMemory.Model
             HasAmountChanged = true;
         }
 
-        public void LateUpdate(float deltaTime)
+        public void LateUpdate()
         {
             HasAmountChanged = false;
         }

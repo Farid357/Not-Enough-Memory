@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace NotEnoughMemory.GameLoop
 {
-    public sealed class LateSystemUpdate : ILateSystemUpdate
+    public sealed class LateGameUpdate : ILateGameUpdate, ILateUpdateable
     {
         private readonly List<ILateUpdateable> _updateables = new();
 
         public IReadOnlyList<ILateUpdateable> Updateables => _updateables;
         
-        public void LateUpdate(float deltaTime)
+        public void LateUpdate()
         {
-            _updateables.ForEach(updateable => updateable.LateUpdate(deltaTime));
+            _updateables.ForEach(updateable => updateable.LateUpdate());
         }
 
         public void Add(params ILateUpdateable[] updateables)

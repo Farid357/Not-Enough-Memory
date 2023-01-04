@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.GameLoop
 {
-    public interface ILateSystemUpdate : ILateUpdateable
+    public interface ILateGameUpdate
     {
         IReadOnlyList<ILateUpdateable> Updateables { get; }
         

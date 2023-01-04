@@ -794,8 +794,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2075225277}
   - component: {fileID: 2075225276}
-  - component: {fileID: 2075225275}
   - component: {fileID: 2075225274}
+  - component: {fileID: 2075225278}
+  - component: {fileID: 2075225279}
   m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
@@ -816,22 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPosition: {fileID: 1362092724}
---- !u!114 &2075225275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075225273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1abc8ecdd3f14e8fa1d88e5c8668f597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   _telephoneView: {fileID: 2102462795}
-  _memoryView: {fileID: 1222877652}
-  _telephoneButton: {fileID: 2102462796}
-  _telephoneClickEffect: {fileID: 2075225274}
 --- !u!114 &2075225276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -844,8 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458ce5c2ac0848cdb020769125f99074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _roots:
-  - {fileID: 2075225275}
+  _viewData: {fileID: 2075225278}
 --- !u!4 &2075225277
 Transform:
   m_ObjectHideFlags: 0
@@ -861,6 +846,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2075225278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075225273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2dca27559d8458c804cb087d5d68926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _telephoneView: {fileID: 2102462795}
+  _memoryView: {fileID: 1222877652}
+  _telephoneClickEffect: {fileID: 2075225274}
+  _buttonsData: {fileID: 2075225279}
+--- !u!114 &2075225279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075225273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c979b71a78bd47fbab032cab1c0d7c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _telephone: {fileID: 2102462796}
 --- !u!1 &2102462790
 GameObject:
   m_ObjectHideFlags: 0

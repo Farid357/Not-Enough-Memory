@@ -2,6 +2,6 @@
 {
     public interface ILateUpdateable
     {
-        void LateUpdate(float deltaTime);
+        void LateUpdate();
     }
 }
