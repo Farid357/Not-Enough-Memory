@@ -4,7 +4,7 @@ using UnityEngine;
 namespace NotEnoughMemory.SceneLoading
 {
     [CreateAssetMenu(fileName = "Scene", menuName = "Create/Scene Data")]
-    public sealed class SceneData : ScriptableObject, ISerializationCallbackReceiver, ISceneData
+    public sealed class Scene : ScriptableObject, ISerializationCallbackReceiver, IScene
     {
 #if UNITY_EDITOR
         [SerializeField] private SceneAsset _scene;

@@ -13,9 +13,9 @@ namespace NotEnoughMemory.SceneLoading
             _bar = _slider;
         }
 
-        public static void Visualize(float value)
+        public static void Visualize(float progress)
         {
-            _bar.size = value;
+            _bar.size = progress / 100f;
         }
     }
 }

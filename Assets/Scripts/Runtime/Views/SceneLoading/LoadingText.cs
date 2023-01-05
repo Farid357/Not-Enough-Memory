@@ -4,16 +4,15 @@ using UnityEngine;
 namespace NotEnoughMemory.SceneLoading
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
-    public sealed class LoadingInterest : MonoBehaviour
+    public sealed class LoadingText : MonoBehaviour
     {
         private static TextMeshProUGUI _text;
 
         private void Start() => _text = GetComponent<TextMeshProUGUI>();
 
-        public static void Visualize(float interest)
+        public static void Visualize(float progress)
         {
-            var value = Mathf.Lerp(0, 100, interest);
-            var valueText = value.ToString();
+            var valueText = progress.ToString();
 
             if (valueText.Length > 2)
                 valueText = $"{valueText[0]}{valueText[1]}";

@@ -2,6 +2,6 @@
 {
     public interface ISceneLoader
     {
-        void Load(ISceneData sceneData);
+        void Load(IScene scene);
     }
 }

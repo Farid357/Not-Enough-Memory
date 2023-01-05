@@ -1,6 +1,6 @@
 ﻿namespace NotEnoughMemory.SceneLoading
 {
-    public interface ISceneData
+    public interface IScene
     {
         string Name { get; }
     }

@@ -3,6 +3,7 @@
     public enum SceneLoadMode
     {
         Simple,
-        WithLoadScreen
+        WithLoadScreen,
+        WithFadeScreen
     }
 }
