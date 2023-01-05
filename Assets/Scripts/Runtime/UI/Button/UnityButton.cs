@@ -19,7 +19,7 @@ namespace NotEnoughMemory.UI
 
         private void OnDestroy()
         {
-            _unityButton.onClick.AddListener(_button.Press);
+            _unityButton.onClick.RemoveListener(_button.Press);
         }
     }
 }

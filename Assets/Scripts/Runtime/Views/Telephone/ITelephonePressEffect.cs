@@ -1,6 +1,6 @@
 ﻿namespace NotEnoughMemory.Model
 {
-    public interface ITelephoneClickEffect
+    public interface ITelephonePressEffect
     {
         void Play();
     }

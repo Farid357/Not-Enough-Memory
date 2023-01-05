@@ -3,22 +3,23 @@ using NotEnoughMemory.Model;
 using NotEnoughMemory.Storage;
 using NotEnoughMemory.View;
 
-namespace NotEnoughMemory.Root
+namespace NotEnoughMemory.Factories
 {
-    public sealed class WalletRoot
+    public sealed class WalletFactory : IFactory<IWallet>
     {
         private readonly ITextView _moneyTextView;
         private readonly ISaveStorages _saveStorages;
 
-        public WalletRoot(ITextView moneyTextView, ISaveStorages saveStorages)
+        public WalletFactory(ITextView moneyTextView, ISaveStorages saveStorages)
         {
             _moneyTextView = moneyTextView ?? throw new ArgumentNullException(nameof(moneyTextView));
             _saveStorages = saveStorages ?? throw new ArgumentNullException(nameof(saveStorages));
         }
 
-        public IWallet Compose()
+        public IWallet Create()
         {
-            var startMoney = _saveStorages.Money.HasSave() ? _saveStorages.Money.Load() : new Money(1);
+            var defaultMoney = new Money(1);
+            var startMoney = _saveStorages.Money.HasSave() ? _saveStorages.Money.Load() : defaultMoney;
             return new Wallet(_moneyTextView, startMoney);
         }
     }

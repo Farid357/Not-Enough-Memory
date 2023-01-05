@@ -8,15 +8,13 @@ namespace NotEnoughMemory.Root
     {
         [SerializeField] private TelephoneView _telephoneView;
         [SerializeField] private MemoryView _memoryView;
-        [SerializeField] private TelephoneClickEffect _telephoneClickEffect;
-        [SerializeField] private UIData _ui;
+        [SerializeField] private TelephonePressEffect _telephonePressEffect;
         
-        public ITelephoneClickEffect TelephoneClickEffect => _telephoneClickEffect;
+        public ITelephonePressEffect TelephonePressEffect => _telephonePressEffect;
         
         public ITelephoneView TelephoneView => _telephoneView;
 
         public IMemoryView MemoryView => _memoryView;
-        
-        public IUIData UI => _ui;
+      
     }
 }

@@ -1,9 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace NotEnoughMemory.Model
 {
-    public sealed class TelephoneClickEffect : MonoBehaviour, ITelephoneClickEffect
+    public sealed class TelephonePressEffect : MonoBehaviour, ITelephonePressEffect
     {
         [SerializeField] private Transform _spawnPosition;
         [SerializeField] private TelephoneView _telephoneView;

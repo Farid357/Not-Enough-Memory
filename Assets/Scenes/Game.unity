@@ -949,6 +949,7 @@ GameObject:
   - component: {fileID: 2075225279}
   - component: {fileID: 2075225281}
   - component: {fileID: 2075225280}
+  - component: {fileID: 2075225282}
   m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
@@ -982,7 +983,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458ce5c2ac0848cdb020769125f99074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _viewData: {fileID: 2075225278}
+  _view: {fileID: 2075225278}
+  _ui: {fileID: 2075225281}
+  _audio: {fileID: 2075225282}
 --- !u!4 &2075225277
 Transform:
   m_ObjectHideFlags: 0
@@ -1012,8 +1015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _telephoneView: {fileID: 2102462795}
   _memoryView: {fileID: 1222877652}
-  _telephoneClickEffect: {fileID: 2075225274}
-  _ui: {fileID: 2075225281}
+  _telephonePressEffect: {fileID: 0}
 --- !u!114 &2075225279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1027,6 +1029,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _telephone: {fileID: 2102462796}
+  _deleteAllSaves: {fileID: 0}
+  _music: {fileID: 0}
 --- !u!114 &2075225280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,6 +1058,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unityButtons: {fileID: 2075225279}
   _texts: {fileID: 2075225280}
+--- !u!114 &2075225282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075225273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 581a6f90c7084e39b0e0f926e28c7806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _music: {fileID: 0}
+  _telephonePress: {fileID: 0}
 --- !u!1 &2102462790
 GameObject:
   m_ObjectHideFlags: 0
