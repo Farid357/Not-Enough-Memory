@@ -27,9 +27,11 @@ namespace NotEnoughMemory.Root
             IFactory<ITelephoneButton> telephoneButtonFactory = new TelephoneButtonFactory(_view.TelephonePressEffect, wallet, telephone, _audio.TelephonePress);
             IRoot telephoneRoot = new TelephoneRoot(telephoneButtonFactory, _gameLoop, _ui.UnityButtons);
             IRoot settingsRoot = new SettingsRoot(_ui.UnityButtons, saveStorages, new Music(_audio.Music));
+            IRoot inputRoot = new InputRoot(_ui.Windows, _gameLoop.GameUpdate);
             settingsRoot.Compose();
             telephoneRoot.Compose();
             saveStorages.Compose(wallet);
+            inputRoot.Compose();
         }
 
         private void FixedUpdate()

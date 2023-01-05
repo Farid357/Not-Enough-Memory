@@ -5,5 +5,7 @@
         IUnityButtonsData UnityButtons { get; }
         
         ITextsData Texts { get; }
+        
+        IWindowsData Windows { get; }
     }
 }
