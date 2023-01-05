@@ -10,5 +10,7 @@ namespace NotEnoughMemory.Root
         
         IUnityButton Music { get; }
 
+        IUnityButton Exit { get; }
+        
     }
 }
