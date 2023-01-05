@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using NotEnoughtMemory.Model.Tools;
+using NotEnoughMemory.Model.Tools;
 
 namespace NotEnoughMemory.Storage
 {

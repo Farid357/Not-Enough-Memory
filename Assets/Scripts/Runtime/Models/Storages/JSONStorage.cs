@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.IO;
-using NotEnoughtMemory.Model.Tools;
+using NotEnoughMemory.Model.Tools;
 
 namespace NotEnoughMemory.Storage
 {

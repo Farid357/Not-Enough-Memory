@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NotEnoughtMemory.Model.Tools
+namespace NotEnoughMemory.Model.Tools
 {
     [Serializable]
     public sealed class HasNotSaveException : Exception

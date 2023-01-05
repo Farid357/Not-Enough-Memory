@@ -1,5 +1,5 @@
 ﻿using System;
-using NotEnoughtMemory.Model.Tools;
+using NotEnoughMemory.Model.Tools;
 
 namespace NotEnoughMemory.Model
 {

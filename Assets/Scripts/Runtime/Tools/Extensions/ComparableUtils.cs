@@ -1,4 +1,4 @@
-﻿namespace NotEnoughtMemory.Model.Tools
+﻿namespace NotEnoughMemory.Model.Tools
 {
     public static class ComparableUtils
     {
