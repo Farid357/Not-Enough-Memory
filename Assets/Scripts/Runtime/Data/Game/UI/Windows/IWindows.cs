@@ -1,6 +1,6 @@
 ﻿namespace NotEnoughMemory.UI
 {
-    public interface IWindowsData
+    public interface IWindows
     {
         IWindow Exit { get; }
         

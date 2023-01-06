@@ -6,18 +6,18 @@ using UnityEngine;
 
 namespace NotEnoughMemory.Game
 {
-    public sealed class InputFactories : IInputFactories
+    public sealed class InputsFactory : IInputsFactory
     {
-        private readonly IWindowsData _windows;
+        private readonly IWindows _windows;
         private readonly IGameUpdate _gameUpdate;
 
-        public InputFactories(IWindowsData windows, IGameUpdate gameUpdate)
+        public InputsFactory(IWindows windows, IGameUpdate gameUpdate)
         {
             _windows = windows ?? throw new ArgumentNullException(nameof(windows));
             _gameUpdate = gameUpdate ?? throw new ArgumentNullException(nameof(gameUpdate));
         }
 
-        public void CreateOpenExitWindowInput()
+        public void Create()
         {
             var openExitWindowInput = new OpenExitWindowInput(new KeyDownInput(KeyCode.Escape), _windows.Exit);
             _gameUpdate.Add(openExitWindowInput);

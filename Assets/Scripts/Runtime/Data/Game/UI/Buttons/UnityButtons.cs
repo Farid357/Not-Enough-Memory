@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.UI
 {
-    public sealed class UnityButtonsData : MonoBehaviour, IUnityButtonsData
+    public sealed class UnityButtons : MonoBehaviour, IUnityButtons
     {
         [SerializeField] private UnityButton _telephone;
         [SerializeField] private UnityButton _deleteAllSaves;

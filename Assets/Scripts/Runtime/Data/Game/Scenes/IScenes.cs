@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.Model
 {
-    public interface IScenesData
+    public interface IScenes
     {
         IScene Menu { get; }
         

@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.UI
 {
-    public interface IScrollBarsData
+    public interface IScrollBars
     {
         IScrollBar Loading { get; }
     }

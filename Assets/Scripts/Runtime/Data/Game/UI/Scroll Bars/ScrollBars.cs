@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace NotEnoughMemory.UI
 {
-    public sealed class ScrollBarsData : MonoBehaviour, IScrollBarsData
+    public sealed class ScrollBars : MonoBehaviour, IScrollBars
     {
         [SerializeField] private UnityScrollBar _loading;
 

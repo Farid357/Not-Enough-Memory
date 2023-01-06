@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.UI
 {
-    public sealed class TextsData : MonoBehaviour, ITextsData
+    public sealed class Texts : MonoBehaviour, ITexts
     {
         [SerializeField] private Text _money;
         [SerializeField] private Text _loading;

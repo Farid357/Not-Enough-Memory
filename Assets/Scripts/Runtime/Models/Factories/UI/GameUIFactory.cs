@@ -7,11 +7,11 @@ namespace NotEnoughMemory.Factories
 {
     public sealed class GameUIFactory : IGameUIFactory
     {
-        private readonly IUIData _ui;
-        private readonly IScenesData _scenes;
+        private readonly IUI _ui;
+        private readonly IScenes _scenes;
         private readonly ISceneLoader _sceneLoader;
 
-        public GameUIFactory(IUIData ui, IScenesData scenes, ISceneLoader sceneLoader)
+        public GameUIFactory(IUI ui, IScenes scenes, ISceneLoader sceneLoader)
         {
             _ui = ui ?? throw new ArgumentNullException(nameof(ui));
             _scenes = scenes ?? throw new ArgumentNullException(nameof(scenes));

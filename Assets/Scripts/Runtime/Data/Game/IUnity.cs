@@ -5,13 +5,13 @@ using NotEnoughMemory.View;
 
 namespace NotEnoughMemory.Game
 {
-    public interface IGameData
+    public interface IUnity
     {
-        IViewData View { get; }
+        IView View { get; }
         
-        IUIData UI { get; }
+        IUI UI { get; }
         
-        IScenesData Scenes { get; }
+        IScenes Scenes { get; }
         
         IAudioData Audio { get; }
         

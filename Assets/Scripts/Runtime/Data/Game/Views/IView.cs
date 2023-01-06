@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.View
 {
-    public interface IViewData
+    public interface IView
     {
         ITelephonePressEffect TelephonePressEffect { get; }
         

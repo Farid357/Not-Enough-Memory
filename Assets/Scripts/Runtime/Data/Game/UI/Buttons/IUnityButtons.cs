@@ -1,6 +1,6 @@
 ﻿namespace NotEnoughMemory.UI
 {
-    public interface IUnityButtonsData
+    public interface IUnityButtons
     {
         IUnityButton Telephone { get; }
         

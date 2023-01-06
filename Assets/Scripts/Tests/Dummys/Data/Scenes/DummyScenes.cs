@@ -3,7 +3,7 @@ using NotEnoughMemory.SceneLoading;
 
 namespace NotEnoughMemory.Tests.Dummys
 {
-    public sealed class DummyScenesData : IScenesData
+    public sealed class DummyScenes : IScenes
     {
         public IScene Menu => new DummyScene();
         

@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.Tests.Dummys
 {
-    public sealed class DummyTextsData : ITextsData
+    public sealed class DummyTexts : ITexts
     {
         public IText Money => new DummyText();
         

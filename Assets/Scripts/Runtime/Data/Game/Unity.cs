@@ -6,9 +6,9 @@ using NotEnoughMemory.View;
 
 namespace NotEnoughMemory.Game
 {
-    public sealed class GameData : IGameData
+    public sealed class Unity : IUnity
     {
-        public GameData(IViewData view, IUIData ui, IScenesData scenes, IAudioData audio)
+        public Unity(IView view, IUI ui, IScenes scenes, IAudioData audio)
         {
             View = view ?? throw new ArgumentNullException(nameof(view));
             UI = ui ?? throw new ArgumentNullException(nameof(ui));
@@ -16,11 +16,11 @@ namespace NotEnoughMemory.Game
             Audio = audio ?? throw new ArgumentNullException(nameof(audio));
         }
 
-        public IViewData View { get; }
+        public IView View { get; }
 
-        public IUIData UI { get; }
+        public IUI UI { get; }
 
-        public IScenesData Scenes { get; }
+        public IScenes Scenes { get; }
 
         public IAudioData Audio { get; }
     }

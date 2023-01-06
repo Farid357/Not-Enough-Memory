@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace NotEnoughMemory.View
 {
-    public sealed class ViewData : MonoBehaviour, IViewData
+    public sealed class View : MonoBehaviour, IView
     {
         [SerializeField] private TelephoneView _telephoneView;
         [SerializeField] private MemoryView _memoryView;

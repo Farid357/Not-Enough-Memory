@@ -1,6 +1,6 @@
 ﻿namespace NotEnoughMemory.UI
 {
-    public interface ITextsData
+    public interface ITexts
     {
         IText Money { get; }
         

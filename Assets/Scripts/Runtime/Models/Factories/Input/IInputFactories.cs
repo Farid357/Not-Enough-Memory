@@ -1,7 +1,7 @@
 ﻿namespace NotEnoughMemory.Game
 {
-    public interface IInputFactories
+    public interface IInputsFactory
     {
-        void CreateOpenExitWindowInput();
+        void Create();
     }
 }

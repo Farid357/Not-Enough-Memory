@@ -14,22 +14,22 @@ namespace NotEnoughMemory.Game
     {
         private readonly IGameTime _time = new GameTime();
 
-        public Game(IGameData data, IGameLoop gameLoop, ISceneLoader sceneLoader)
+        public Game(IUnity unity, IGameLoop gameLoop, ISceneLoader sceneLoader)
         {
-            IUIData ui = data.UI;
-            IAudioData audio = data.Audio;
-            IScenesData scenes = data.Scenes;
+            IUI ui = unity.UI;
+            IAudioData audio = unity.Audio;
+            IScenes scenes = unity.Scenes;
             ISaveStorages saveStorages = new SaveStorages(gameLoop);
             IFactory<IWallet> walletFactory = new WalletFactory(new TextView(ui.Texts.Money), saveStorages);
             IWallet wallet = walletFactory.Create();
-            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(gameLoop, data, wallet);
+            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(gameLoop, unity, wallet);
             ITelephone telephone = telephoneFactory.Create();
             ISettingsFactory settingsFactory = new SettingsFactory(ui.UnityButtons, saveStorages, new Music(audio.Music));
             settingsFactory.Create();
-            IInputFactories inputFactories = new InputFactories(ui.Windows, gameLoop.GameUpdate);
+            IInputsFactory inputFactories = new InputsFactory(ui.Windows, gameLoop.GameUpdate);
             IGameUIFactory gameUIRoot = new GameUIFactory(ui, scenes, sceneLoader);
             gameUIRoot.Create();
-            inputFactories.CreateOpenExitWindowInput();
+            inputFactories.Create();
         }
 
         public bool IsPaused => _time.IsActive;

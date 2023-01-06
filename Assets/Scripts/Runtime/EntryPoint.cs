@@ -3,18 +3,16 @@ using NotEnoughMemory.Game;
 using NotEnoughMemory.Game.Loop;
 using NotEnoughMemory.Model;
 using NotEnoughMemory.SceneLoading;
-using NotEnoughMemory.UI;
-using NotEnoughMemory.View;
 using UnityEngine;
 
 namespace NotEnoughMemory
 {
     public sealed class EntryPoint : MonoBehaviour
     {
-        [SerializeField] private ViewData _view;
-        [SerializeField] private UIData _ui;
+        [SerializeField] private View.View _view;
+        [SerializeField] private UI.UI _ui;
         [SerializeField] private AudioData _audio;
-        [SerializeField] private ScenesData _scenes;
+        [SerializeField] private Scenes _scenes;
         [SerializeField] private SceneLoader _sceneLoader;
         
         private readonly IGameLoop _gameLoop = new GameLoop();
@@ -22,7 +20,7 @@ namespace NotEnoughMemory
 
         private void Awake()
         {
-            var gameData = new GameData(_view, _ui, _scenes, _audio);
+            var gameData = new Game.Unity(_view, _ui, _scenes, _audio);
             _game = new Game.Game(gameData, _gameLoop, _sceneLoader);
         }
 

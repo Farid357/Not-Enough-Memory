@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace NotEnoughMemory.Model
 {
-    public sealed class ScenesData : MonoBehaviour, IScenesData
+    public sealed class Scenes : MonoBehaviour, IScenes
     {
         [SerializeField] private Scene _menu;
         [SerializeField] private Scene _game;

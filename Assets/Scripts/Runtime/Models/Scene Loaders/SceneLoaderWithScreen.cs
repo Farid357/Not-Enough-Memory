@@ -1,19 +1,19 @@
 using System;
 using System.Threading.Tasks;
-using Cysharp.Threading.Tasks;
+using NotEnoughMemory.UI;
 using UnityEngine;
 
 namespace NotEnoughMemory.SceneLoading
 {
     public sealed class SceneLoaderWithScreen : ISceneLoader
     {
-        private readonly IScene _loaderScene;
+        private readonly IWindow _loadingWindow;
         private readonly IUnitySceneLoader _unitySceneLoader;
         private readonly ISceneLoadingView _sceneLoadingView;
 
-        public SceneLoaderWithScreen(IScene loaderScene, IUnitySceneLoader unitySceneLoader, ISceneLoadingView sceneLoadingView)
+        public SceneLoaderWithScreen(IWindow loadingWindow, IUnitySceneLoader unitySceneLoader, ISceneLoadingView sceneLoadingView)
         {
-            _loaderScene = loaderScene ?? throw new ArgumentNullException(nameof(loaderScene));
+            _loadingWindow = loadingWindow ?? throw new ArgumentNullException(nameof(loadingWindow));
             _unitySceneLoader = unitySceneLoader ?? throw new ArgumentNullException(nameof(unitySceneLoader));
             _sceneLoadingView = sceneLoadingView ?? throw new ArgumentNullException(nameof(sceneLoadingView));
         }
@@ -23,13 +23,7 @@ namespace NotEnoughMemory.SceneLoading
             if (scene is null)
                 throw new ArgumentNullException(nameof(scene));
 
-            var loadScreenOperation = _unitySceneLoader.LoadAsync(_loaderScene);
-            await loadScreenOperation;
-            LoadNext(scene);
-        }
-
-        private async void LoadNext(IScene scene)
-        {
+            _loadingWindow.Open();
             var time = 0f;
             const float loadingTime = 2f;
             const float toPercents = 100f;

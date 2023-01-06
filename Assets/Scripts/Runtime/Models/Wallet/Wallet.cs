@@ -14,6 +14,7 @@ namespace NotEnoughMemory.Model
             _textView = textView ?? throw new ArgumentNullException(nameof(textView));
             _storage = storage;
             Money = _storage.HasSave() ? _storage.Load() : new Money(10);
+            _textView.Visualize(Money);
         }
 
         public Money Money { get; private set; }

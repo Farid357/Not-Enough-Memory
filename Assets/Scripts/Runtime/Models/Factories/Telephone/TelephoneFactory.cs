@@ -12,24 +12,24 @@ namespace NotEnoughMemory.Factories
     {
         private readonly IWallet _wallet;
         private readonly IGameLoop _gameLoop;
-        private readonly IGameData _game;
+        private readonly IUnity _unity;
         
-        public TelephoneFactory(IGameLoop gameLoop, IGameData gameData, IWallet wallet)
+        public TelephoneFactory(IGameLoop gameLoop, IUnity unity, IWallet wallet)
         {
             _wallet = wallet ?? throw new ArgumentNullException(nameof(wallet));
             _gameLoop = gameLoop ?? throw new ArgumentNullException(nameof(gameLoop));
-            _game = gameData ?? throw new ArgumentNullException(nameof(gameData));
+            _unity = unity ?? throw new ArgumentNullException(nameof(unity));
         }
         
         public ITelephone Create()
         {
-            IViewData view = _game.View;
+            IView view = _unity.View;
             ITelephone telephone = new Telephone(view.Telephone, new Memory(), view.Memory);
             IFactory<ITelephoneButton> telephoneButtonFactory = new TelephoneButtonFactory(view.TelephonePressEffect, _wallet, 
-                telephone, new Sound(_game.Audio.TelephonePress));
+                telephone, new Sound(_unity.Audio.TelephonePress));
             
             ITelephoneButton telephoneButton = telephoneButtonFactory.Create();
-            _game.UI.UnityButtons.Telephone.Init(telephoneButton);
+            _unity.UI.UnityButtons.Telephone.Init(telephoneButton);
             _gameLoop.LateGameUpdate.Add(telephone.Memory);
             return telephone;
         }
