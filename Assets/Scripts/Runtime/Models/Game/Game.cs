@@ -26,10 +26,10 @@ namespace NotEnoughMemory.Game
             ITelephone telephone = telephoneFactory.Create();
             ISettingsFactory settingsFactory = new SettingsFactory(ui.UnityButtons, saveStorages, new Music(audio.Music));
             settingsFactory.Create();
-            IInputsFactory inputFactories = new InputsFactory(ui.Windows, gameLoop.GameUpdate);
+            IInputsFactory inputsFactory = new InputsFactory(ui.Windows, gameLoop.GameUpdate);
             IGameUIFactory gameUIRoot = new GameUIFactory(ui, scenes, sceneLoader);
             gameUIRoot.Create();
-            inputFactories.Create();
+            inputsFactory.Create();
         }
 
         public bool IsPaused => _time.IsActive;
