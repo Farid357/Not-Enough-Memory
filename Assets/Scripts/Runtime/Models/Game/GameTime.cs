@@ -4,7 +4,7 @@ namespace NotEnoughMemory.Game
 {
     public sealed class GameTime : IGameTime
     {
-        public bool IsActive => Time.timeScale == 0;
+        public bool IsActive => Time.timeScale != 0;
         
         public void Stop()
         {
