@@ -1,5 +1,13 @@
 ﻿using System;
+using NotEnoughMemory.Audio;
+using NotEnoughMemory.Factories;
+using NotEnoughMemory.GameLoop;
+using NotEnoughMemory.Model;
 using NotEnoughMemory.Root;
+using NotEnoughMemory.SceneLoading;
+using NotEnoughMemory.Storage;
+using NotEnoughMemory.UI;
+using NotEnoughMemory.View;
 
 namespace NotEnoughMemory.Game
 {
@@ -8,10 +16,23 @@ namespace NotEnoughMemory.Game
         private readonly IRoot _root;
         private readonly IGameTime _time;
 
-        public Game(IRoot root, IGameTime time)
+        public Game(IGameTime time, IGameData data, IGameLoop gameLoop, ISceneLoader sceneLoader)
         {
-            _root = root ?? throw new ArgumentNullException(nameof(root));
             _time = time ?? throw new ArgumentNullException(nameof(time));
+            IUIData ui = data.UI;
+            IAudioData audio = data.Audio;
+            IScenesData scenes = data.Scenes;
+            ISaveStorages saveStorages = new SaveStorages(gameLoop);
+            IFactory<IWallet> walletFactory = new WalletFactory(new TextView(ui.Texts.Money), saveStorages);
+            IWallet wallet = walletFactory.Create();
+            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(gameLoop, data, wallet;
+            ITelephone telephone = telephoneFactory.Create();
+            ISettingsFactory settingsFactory = new SettingsFactory(ui.UnityButtons, saveStorages, new Music(audio.Music));
+            settingsFactory.Create();
+            IInputFactories inputFactories = new InputFactories(ui.Windows, gameLoop.GameUpdate);
+            IGameUIFactory gameUIRoot = new GameUIFactory(ui, scenes, sceneLoader);
+            gameUIRoot.Create();
+            inputFactories.CreateOpenExitWindowInput();
         }
 
         public bool IsPaused => _time.IsActive;

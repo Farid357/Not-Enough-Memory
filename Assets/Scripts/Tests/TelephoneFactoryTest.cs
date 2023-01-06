@@ -13,7 +13,7 @@ namespace NotEnoughMemory.Tests
         {
             ITelephoneView telephoneView = new DummyTelephoneView(readyToSwitchAppearance: false);
             IMemory memory = new DummyMemory();
-            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(telephoneView, new DummyMemoryView(), memory);
+            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(new DummyMemoryView(), memory);
             var createdTelephone = telephoneFactory.Create();
             Assert.That(createdTelephone.Memory == memory);
         }
