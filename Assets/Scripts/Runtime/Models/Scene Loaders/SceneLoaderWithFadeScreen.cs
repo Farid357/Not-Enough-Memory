@@ -1,8 +1,7 @@
 ﻿using System;
-using NotEnoughMemory.SceneLoading;
 using NotEnoughMemory.View;
 
-namespace IceCream.LoadSystem
+namespace NotEnoughMemory.SceneLoading
 {
     public sealed class SceneLoaderWithFadeScreen : ISceneLoader
     {

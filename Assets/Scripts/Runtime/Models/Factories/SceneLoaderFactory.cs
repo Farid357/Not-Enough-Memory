@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using IceCream.LoadSystem;
 using NotEnoughMemory.SceneLoading;
 using NotEnoughMemory.UI;
 using NotEnoughMemory.View;

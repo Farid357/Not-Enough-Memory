@@ -12,7 +12,7 @@ namespace NotEnoughMemory.Tests
         public void CreatesCorrectly()
         {
             IMemory memory = new DummyMemory();
-            var gameData = new Game.Unity(new DummyView(), new DummyIui(), new DummyScenes(), new DummyAudioData());
+            var gameData = new Game.Unity(new DummyViews(), new DummyUI(), new DummyScenes(), new DummySceneLoader());
             IFactory<ITelephone> telephoneFactory = new TelephoneFactory(new Game.Loop.GameLoop(),gameData, new DummyWallet());
             var createdTelephone = telephoneFactory.Create();
             Assert.That(createdTelephone.Memory == memory);

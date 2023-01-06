@@ -23,10 +23,10 @@ namespace NotEnoughMemory.Factories
         
         public ITelephone Create()
         {
-            IView view = _unity.View;
-            ITelephone telephone = new Telephone(view.Telephone, new Memory(), view.Memory);
-            IFactory<ITelephoneButton> telephoneButtonFactory = new TelephoneButtonFactory(view.TelephonePressEffect, _wallet, 
-                telephone, new Sound(_unity.Audio.TelephonePress));
+            IViews views = _unity.Views;
+            ITelephone telephone = new Telephone(views.Telephone, new Memory(), views.Memory);
+            IFactory<ITelephoneButton> telephoneButtonFactory = new TelephoneButtonFactory(views.Effects.TelephonePress, _wallet, 
+                telephone, new Sound(views.Audios.TelephonePress));
             
             ITelephoneButton telephoneButton = telephoneButtonFactory.Create();
             _unity.UI.UnityButtons.Telephone.Init(telephoneButton);

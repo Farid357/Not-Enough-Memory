@@ -1,13 +1,11 @@
-﻿namespace NotEnoughMemory.Game
+﻿using NotEnoughMemory.Game.Loop;
+
+namespace NotEnoughMemory.Game
 {
     public interface IGame
     {
-        bool IsNotPaused { get; }
-
-        bool IsPaused { get; }
-
-        void Pause();
-
-        void Continue();
+        IGameTime Time {get;}
+        
+        IGameLoop Loop { get; }
     }
 }

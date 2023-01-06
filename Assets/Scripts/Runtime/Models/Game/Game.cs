@@ -3,7 +3,6 @@ using NotEnoughMemory.Audio;
 using NotEnoughMemory.Factories;
 using NotEnoughMemory.Game.Loop;
 using NotEnoughMemory.Model;
-using NotEnoughMemory.SceneLoading;
 using NotEnoughMemory.Storage;
 using NotEnoughMemory.UI;
 using NotEnoughMemory.View;
@@ -12,44 +11,27 @@ namespace NotEnoughMemory.Game
 {
     public sealed class Game : IGame
     {
-        private readonly IGameTime _time = new GameTime();
-
-        public Game(IUnity unity, IGameLoop gameLoop, ISceneLoader sceneLoader)
+        public Game(IUnity unity, IGameLoop loop)
         {
+            Loop = loop ?? throw new ArgumentNullException(nameof(loop));
             IUI ui = unity.UI;
-            IAudioData audio = unity.Audio;
+            IAudios audio = unity.Views.Audios;
             IScenes scenes = unity.Scenes;
-            ISaveStorages saveStorages = new SaveStorages(gameLoop);
+            ISaveStorages saveStorages = new SaveStorages(loop);
             IFactory<IWallet> walletFactory = new WalletFactory(new TextView(ui.Texts.Money), saveStorages);
             IWallet wallet = walletFactory.Create();
-            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(gameLoop, unity, wallet);
+            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(loop, unity, wallet);
             ITelephone telephone = telephoneFactory.Create();
             ISettingsFactory settingsFactory = new SettingsFactory(ui.UnityButtons, saveStorages, new Music(audio.Music));
             settingsFactory.Create();
-            IInputsFactory inputsFactory = new InputsFactory(ui.Windows, gameLoop.GameUpdate);
-            IGameUIFactory gameUIRoot = new GameUIFactory(ui, scenes, sceneLoader);
+            IInputsFactory inputsFactory = new InputsFactory(ui.Windows, loop.GameUpdate, Time);
+            IGameUIFactory gameUIRoot = new GameUIFactory(unity, Time);
             gameUIRoot.Create();
             inputsFactory.Create();
         }
 
-        public bool IsPaused => _time.IsActive;
-        
-        public bool IsNotPaused => !_time.IsActive;
+        public IGameTime Time { get; } = new GameTime();
 
-        public void Pause()
-        {
-            if (IsPaused)
-                throw new InvalidOperationException("Game is already paused!");
-
-            _time.Stop();
-        }
-
-        public void Continue()
-        {
-            if (IsPaused == false)
-                throw new InvalidOperationException("Game is not paused!");
-
-            _time.Enable();
-        }
+        public IGameLoop Loop { get; }
     }
 }

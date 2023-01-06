@@ -1,4 +1,5 @@
 ﻿using System;
+using NotEnoughMemory.UI;
 using NotEnoughMemory.View;
 
 namespace NotEnoughMemory.SceneLoading

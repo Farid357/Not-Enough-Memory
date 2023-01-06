@@ -1,26 +1,47 @@
 ﻿using System;
-using NotEnoughMemory.Model;
-using NotEnoughMemory.SceneLoading;
+using System.Collections.Generic;
+using System.Linq;
+using NotEnoughMemory.Game;
 using NotEnoughMemory.UI;
+using NotEnoughMemory.UI.UnityDropDown;
+using NotEnoughMemory.View;
+using UnityEngine;
 
 namespace NotEnoughMemory.Factories
 {
+    //Need Refactoring
     public sealed class GameUIFactory : IGameUIFactory
     {
-        private readonly IUI _ui;
-        private readonly IScenes _scenes;
-        private readonly ISceneLoader _sceneLoader;
+        private readonly IUnity _unity;
+        private readonly IGameTime _gameTime;
 
-        public GameUIFactory(IUI ui, IScenes scenes, ISceneLoader sceneLoader)
+        public GameUIFactory(IUnity unity, IGameTime gameTime)
         {
-            _ui = ui ?? throw new ArgumentNullException(nameof(ui));
-            _scenes = scenes ?? throw new ArgumentNullException(nameof(scenes));
-            _sceneLoader = sceneLoader ?? throw new ArgumentNullException(nameof(sceneLoader));
+            _unity = unity ?? throw new ArgumentNullException(nameof(unity));
+            _gameTime = gameTime ?? throw new ArgumentNullException(nameof(gameTime));
         }
 
         public void Create()
         {
-            _ui.UnityButtons.Exit.Init(new SceneLoadButton(_sceneLoader, _scenes.Menu));
+            IUI ui = _unity.UI;
+            ui.UnityButtons.Exit.Init(new SceneLoadButton(_unity.SceneLoader, _unity.Scenes.Menu));
+            ui.UnityButtons.CloseExitWindow.Init(new CloseWindowButton(_gameTime, ui.Windows.Exit));
+            IDropdown<IQualityDropdownOption> qualityDropdown = new QualityDropdown(new TextView(ui.Texts.QualityLevel));
+            IUnityDropdown unityQualityDropdown = new UnityDropdown<IQualityDropdownOption>(ui.Dropdowns.QualityLevel, CreateQualityOptions(), qualityDropdown);
+            unityQualityDropdown.Enable();
+        }
+
+        private IReadOnlyList<IQualityDropdownOption> CreateQualityOptions()
+        {
+            List<QualityLevel> qualityLevels = Enum.GetValues(typeof(QualityLevel)).Cast<QualityLevel>().ToList();
+            var options = new List<IQualityDropdownOption>();
+            
+            foreach (var qualityLevel in qualityLevels)
+            {
+                options.Add(new QualityDropdownOption(qualityLevel.ToString(), qualityLevel));
+            }
+
+            return options;
         }
     }
 }
