@@ -6,8 +6,6 @@ namespace NotEnoughMemory.Storage
     {
         ISaveStorage<Money> Money { get; }
         
-        void Compose(IWallet wallet);
-
         void DeleteAllSaves();
 
     }

@@ -1,5 +1,6 @@
 ﻿using NotEnoughMemory.Audio;
 using NotEnoughMemory.Factories;
+using NotEnoughMemory.Game;
 using NotEnoughMemory.GameLoop;
 using NotEnoughMemory.Model;
 using NotEnoughMemory.Storage;
@@ -14,8 +15,9 @@ namespace NotEnoughMemory.Root
         [SerializeField] private ViewData _view;
         [SerializeField] private UIData _ui;
         [SerializeField] private AudioData _audio;
-        
+
         private readonly IGameLoop _gameLoop = new GameLoop.GameLoop();
+        private IGame _game;
 
         private void Awake()
         {
@@ -28,25 +30,27 @@ namespace NotEnoughMemory.Root
             IRoot telephoneRoot = new TelephoneRoot(telephoneButtonFactory, _gameLoop, _ui.UnityButtons);
             IRoot settingsRoot = new SettingsRoot(_ui.UnityButtons, saveStorages, new Music(_audio.Music));
             IRoot inputRoot = new InputRoot(_ui.Windows, _gameLoop.GameUpdate);
-            settingsRoot.Compose();
-            telephoneRoot.Compose();
-            saveStorages.Compose(wallet);
-            inputRoot.Compose();
+            IRoot roots = new Roots(new[] { inputRoot, settingsRoot, telephoneRoot });
+            _game = new Game.Game(roots, new GameTime());
+            _game.Play();
         }
 
         private void FixedUpdate()
         {
-            _gameLoop.FixedUpdate(Time.fixedDeltaTime);
+            if (_game.IsNotPaused)
+                _gameLoop.FixedUpdate(Time.fixedDeltaTime);
         }
 
         private void Update()
         {
-            _gameLoop.Update(Time.deltaTime);
+            if (_game.IsNotPaused)
+                _gameLoop.Update(Time.deltaTime);
         }
 
         private void LateUpdate()
         {
-            _gameLoop.LateUpdate();
+            if (_game.IsNotPaused)
+                _gameLoop.LateUpdate();
         }
     }
 }

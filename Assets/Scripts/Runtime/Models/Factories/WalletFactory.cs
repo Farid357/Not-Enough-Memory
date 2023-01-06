@@ -18,9 +18,7 @@ namespace NotEnoughMemory.Factories
 
         public IWallet Create()
         {
-            var defaultMoney = new Money(1);
-            var startMoney = _saveStorages.Money.HasSave() ? _saveStorages.Money.Load() : defaultMoney;
-            return new Wallet(_moneyTextView, startMoney);
+            return new Wallet(_moneyTextView, _saveStorages.Money);
         }
     }
 }

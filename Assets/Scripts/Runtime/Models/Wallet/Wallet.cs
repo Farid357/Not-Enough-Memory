@@ -1,4 +1,5 @@
 ﻿using System;
+using NotEnoughMemory.Storage;
 using NotEnoughMemory.View;
 
 namespace NotEnoughMemory.Model
@@ -6,11 +7,13 @@ namespace NotEnoughMemory.Model
     public sealed class Wallet : IWallet
     {
         private readonly ITextView _textView;
+        private readonly ISaveStorage<Money> _storage;
 
-        public Wallet(ITextView textView, Money startMoney)
+        public Wallet(ITextView textView, ISaveStorage<Money> storage)
         {
             _textView = textView ?? throw new ArgumentNullException(nameof(textView));
-            Money = startMoney;
+            _storage = storage;
+            Money = _storage.HasSave() ? _storage.Load() : new Money(10);
         }
 
         public Money Money { get; private set; }
@@ -21,14 +24,20 @@ namespace NotEnoughMemory.Model
         {
             Money += money;
             HasMoneyChanged = true;
-            _textView.Visualize(Money);
+            VisualizeAndSave(Money);
         }
 
         public void Take(Money money)
         {
             Money -= money;
             HasMoneyChanged = true;
-            _textView.Visualize(Money);
+            VisualizeAndSave(Money);
+        }
+
+        private void VisualizeAndSave(Money money)
+        {
+            _textView.Visualize(money);
+            _storage.Save(money);
         }
 
         public void LateUpdate()

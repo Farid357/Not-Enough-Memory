@@ -15,13 +15,8 @@ namespace NotEnoughMemory.Storage
         public SaveStorages(IGameLoop gameLoop)
         {
             _gameLoop = gameLoop ?? throw new ArgumentNullException(nameof(gameLoop));
-            Money = new BinaryStorage<Money>(new PathWithNames<MoneyStorage, Money>());
+            Money = new BinaryStorage<Money>(new PathWithNames<IWallet, Money>());
             _all.Add(Money);
-        }
-
-        public void Compose(IWallet wallet)
-        {
-            _gameLoop.GameUpdate.Add(new MoneyStorage(wallet, Money));
         }
         
         public void DeleteAllSaves()
