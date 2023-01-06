@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NotEnoughMemory.GameLoop
+namespace NotEnoughMemory.Game.Loop
 {
     public sealed class FixedGameUpdate : IFixedGameUpdate, IFixedUpdateable
     {

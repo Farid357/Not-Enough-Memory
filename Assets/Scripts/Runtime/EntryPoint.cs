@@ -1,12 +1,13 @@
 ﻿using NotEnoughMemory.Audio;
 using NotEnoughMemory.Game;
-using NotEnoughMemory.GameLoop;
+using NotEnoughMemory.Game.Loop;
 using NotEnoughMemory.Model;
 using NotEnoughMemory.SceneLoading;
 using NotEnoughMemory.UI;
+using NotEnoughMemory.View;
 using UnityEngine;
 
-namespace NotEnoughMemory.Root
+namespace NotEnoughMemory
 {
     public sealed class EntryPoint : MonoBehaviour
     {
@@ -16,14 +17,13 @@ namespace NotEnoughMemory.Root
         [SerializeField] private ScenesData _scenes;
         [SerializeField] private SceneLoader _sceneLoader;
         
-        private readonly IGameLoop _gameLoop = new GameLoop.GameLoop();
+        private readonly IGameLoop _gameLoop = new GameLoop();
         private IGame _game;
 
         private void Awake()
         {
             var gameData = new GameData(_view, _ui, _scenes, _audio);
-            _game = new Game.Game(new GameTime(), gameData, new GameLoop.GameLoop(), _sceneLoader);
-            _game.Play();
+            _game = new Game.Game(gameData, _gameLoop, _sceneLoader);
         }
 
         private void FixedUpdate()

@@ -1,10 +1,10 @@
 ﻿using System;
 using NotEnoughMemory.Audio;
 using NotEnoughMemory.Game;
-using NotEnoughMemory.GameLoop;
+using NotEnoughMemory.Game.Loop;
 using NotEnoughMemory.Model;
-using NotEnoughMemory.Root;
 using NotEnoughMemory.UI;
+using NotEnoughMemory.View;
 
 namespace NotEnoughMemory.Factories
 {

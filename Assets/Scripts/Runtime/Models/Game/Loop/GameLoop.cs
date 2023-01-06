@@ -1,4 +1,4 @@
-﻿namespace NotEnoughMemory.GameLoop
+﻿namespace NotEnoughMemory.Game.Loop
 {
     public sealed class GameLoop : IUpdateable, IFixedUpdateable, ILateUpdateable, IGameLoop
     {

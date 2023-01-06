@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using NotEnoughMemory.GameLoop;
+using NotEnoughMemory.Game.Loop;
 using NotEnoughMemory.Model;
 
 namespace NotEnoughMemory.Storage

@@ -1,4 +1,4 @@
-﻿using NotEnoughMemory.GameLoop;
+﻿using NotEnoughMemory.Game.Loop;
 
 namespace NotEnoughMemory.Model
 {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NotEnoughMemory.GameLoop
+namespace NotEnoughMemory.Game.Loop
 {
     public interface IFixedGameUpdate
     {

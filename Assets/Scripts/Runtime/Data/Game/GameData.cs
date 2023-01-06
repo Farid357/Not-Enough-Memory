@@ -1,8 +1,8 @@
 ﻿using System;
 using NotEnoughMemory.Audio;
 using NotEnoughMemory.Model;
-using NotEnoughMemory.Root;
 using NotEnoughMemory.UI;
+using NotEnoughMemory.View;
 
 namespace NotEnoughMemory.Game
 {

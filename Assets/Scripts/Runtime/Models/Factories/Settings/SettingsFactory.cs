@@ -3,7 +3,7 @@ using NotEnoughMemory.Audio;
 using NotEnoughMemory.Storage;
 using NotEnoughMemory.UI;
 
-namespace NotEnoughMemory.Root
+namespace NotEnoughMemory.Factories
 {
     public sealed class SettingsFactory : ISettingsFactory
     {

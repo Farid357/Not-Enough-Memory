@@ -1,5 +1,5 @@
 ﻿using System;
-using NotEnoughMemory.GameLoop;
+using NotEnoughMemory.Game.Loop;
 using NotEnoughMemory.Input;
 using NotEnoughMemory.UI;
 using UnityEngine;

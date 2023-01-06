@@ -1,6 +1,6 @@
 ﻿using NotEnoughMemory.Model;
 
-namespace NotEnoughMemory.Root
+namespace NotEnoughMemory.View
 {
     public interface IViewData
     {

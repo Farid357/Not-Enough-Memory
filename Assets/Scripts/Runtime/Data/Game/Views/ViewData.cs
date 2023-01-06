@@ -1,8 +1,7 @@
 ﻿using NotEnoughMemory.Model;
-using NotEnoughMemory.View;
 using UnityEngine;
 
-namespace NotEnoughMemory.Root
+namespace NotEnoughMemory.View
 {
     public sealed class ViewData : MonoBehaviour, IViewData
     {

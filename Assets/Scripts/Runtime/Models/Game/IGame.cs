@@ -5,8 +5,6 @@
         bool IsNotPaused { get; }
 
         bool IsPaused { get; }
-        
-        void Play();
 
         void Pause();
 

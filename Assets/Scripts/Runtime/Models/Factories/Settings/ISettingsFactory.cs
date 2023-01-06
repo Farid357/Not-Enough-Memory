@@ -1,4 +1,4 @@
-﻿namespace NotEnoughMemory.Root
+﻿namespace NotEnoughMemory.Factories
 {
     public interface ISettingsFactory
     {

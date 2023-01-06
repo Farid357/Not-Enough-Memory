@@ -1,9 +1,8 @@
 ﻿using System;
 using NotEnoughMemory.Audio;
 using NotEnoughMemory.Factories;
-using NotEnoughMemory.GameLoop;
+using NotEnoughMemory.Game.Loop;
 using NotEnoughMemory.Model;
-using NotEnoughMemory.Root;
 using NotEnoughMemory.SceneLoading;
 using NotEnoughMemory.Storage;
 using NotEnoughMemory.UI;
@@ -13,19 +12,17 @@ namespace NotEnoughMemory.Game
 {
     public sealed class Game : IGame
     {
-        private readonly IRoot _root;
-        private readonly IGameTime _time;
+        private readonly IGameTime _time = new GameTime();
 
-        public Game(IGameTime time, IGameData data, IGameLoop gameLoop, ISceneLoader sceneLoader)
+        public Game(IGameData data, IGameLoop gameLoop, ISceneLoader sceneLoader)
         {
-            _time = time ?? throw new ArgumentNullException(nameof(time));
             IUIData ui = data.UI;
             IAudioData audio = data.Audio;
             IScenesData scenes = data.Scenes;
             ISaveStorages saveStorages = new SaveStorages(gameLoop);
             IFactory<IWallet> walletFactory = new WalletFactory(new TextView(ui.Texts.Money), saveStorages);
             IWallet wallet = walletFactory.Create();
-            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(gameLoop, data, wallet;
+            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(gameLoop, data, wallet);
             ITelephone telephone = telephoneFactory.Create();
             ISettingsFactory settingsFactory = new SettingsFactory(ui.UnityButtons, saveStorages, new Music(audio.Music));
             settingsFactory.Create();
@@ -38,11 +35,6 @@ namespace NotEnoughMemory.Game
         public bool IsPaused => _time.IsActive;
         
         public bool IsNotPaused => !_time.IsActive;
-
-        public void Play()
-        {
-            _root.Compose();
-        }
 
         public void Pause()
         {
