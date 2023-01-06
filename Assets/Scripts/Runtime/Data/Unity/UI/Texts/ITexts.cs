@@ -6,6 +6,5 @@
         
         IText Loading { get; }
         
-        IText QualityLevel { get; }
     }
 }

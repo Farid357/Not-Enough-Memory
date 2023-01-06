@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace NotEnoughMemory.SceneLoading
 {
-    public sealed class SceneLoaderWithScreen : ISceneLoader
+    public sealed class SceneLoaderWithLoadingScreen : ISceneLoader
     {
         private readonly IWindow _loadingWindow;
         private readonly IUnitySceneLoader _unitySceneLoader;
         private readonly ISceneLoadingView _sceneLoadingView;
 
-        public SceneLoaderWithScreen(IWindow loadingWindow, IUnitySceneLoader unitySceneLoader, ISceneLoadingView sceneLoadingView)
+        public SceneLoaderWithLoadingScreen(IWindow loadingWindow, IUnitySceneLoader unitySceneLoader, ISceneLoadingView sceneLoadingView)
         {
             _loadingWindow = loadingWindow ?? throw new ArgumentNullException(nameof(loadingWindow));
             _unitySceneLoader = unitySceneLoader ?? throw new ArgumentNullException(nameof(unitySceneLoader));
@@ -32,7 +32,7 @@ namespace NotEnoughMemory.SceneLoading
             {
                 await Task.Delay(TimeSpan.FromSeconds(0.1f));
                 var progress = Mathf.Lerp(0, 1, time / loadingTime);
-                _sceneLoadingView.Visualize(progress * toPercents);
+                _sceneLoadingView.Visualize(progress);
                 time += 0.1f;
             }
 

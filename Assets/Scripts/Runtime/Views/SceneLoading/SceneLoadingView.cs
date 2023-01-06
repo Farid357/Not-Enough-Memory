@@ -17,7 +17,7 @@ namespace NotEnoughMemory.SceneLoading
         
         public void Visualize(float progress)
         {
-            _textView.Visualize(progress.ToString());
+            _textView.Visualize((progress * 100f).ToString() + "%");
             _scrollBar.Visualize(progress);
         }
     }

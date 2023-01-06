@@ -16,7 +16,7 @@ namespace NotEnoughMemory.UI.UnityDropDown
         public UnityDropdown(TMP_Dropdown unityDropdown, IReadOnlyList<TOption> options, IDropdown<TOption> dropdown)
         {
             _unityDropdown = unityDropdown ?? throw new ArgumentNullException(nameof(unityDropdown));
-            _dropdownValueStorage = new BinaryStorage<int>(new PathWithNames<TOption, int>());
+            _dropdownValueStorage = new BinaryStorage<int>(new Path(nameof(TOption)));
             _dropdown = dropdown ?? throw new ArgumentNullException(nameof(dropdown));
             _options = options ?? throw new ArgumentNullException(nameof(options));
         }
@@ -39,6 +39,7 @@ namespace NotEnoughMemory.UI.UnityDropDown
         {
             foreach (var option in _options)
             {
+                UnityEngine.Debug.Log("Create option");
                 yield return new TMP_Dropdown.OptionData(option.Name);
             }
         }

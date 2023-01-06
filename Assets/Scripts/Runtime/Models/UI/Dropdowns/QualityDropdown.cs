@@ -1,23 +1,20 @@
 ﻿using System;
 using NotEnoughMemory.UI.UnityDropDown;
-using NotEnoughMemory.View;
-using UnityEngine;
 
 namespace NotEnoughMemory.UI
 {
     public sealed class QualityDropdown : IDropdown<IQualityDropdownOption>
     {
-        private readonly ITextView _textView;
+        private readonly IQualitySettings _qualitySettings;
 
-        public QualityDropdown(ITextView textView)
+        public QualityDropdown(IQualitySettings qualitySettings)
         {
-            _textView = textView ?? throw new ArgumentNullException(nameof(textView));
+            _qualitySettings = qualitySettings ?? throw new ArgumentNullException(nameof(qualitySettings));
         }
 
-        public void Select(IQualityDropdownOption option)
+        public void Select(IQualityDropdownOption qualityOption)
         {
-            QualitySettings.SetQualityLevel((int)option.Level);
-            _textView.Visualize(option.Name);
+            _qualitySettings.SelectQualityLevel(qualityOption.Level);
         }
     }
 }

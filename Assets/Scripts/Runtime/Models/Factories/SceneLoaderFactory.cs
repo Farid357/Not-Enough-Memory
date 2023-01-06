@@ -32,7 +32,7 @@ namespace NotEnoughMemory.Factories
             return _sceneLoadMode switch
             {
                 SceneLoadMode.Simple => new UnitySceneLoader(LoadSceneMode.Single),
-                SceneLoadMode.WithLoadScreen => new SceneLoaderWithScreen(_loadingWindow, unitySceneLoader, _sceneLoadingView),
+                SceneLoadMode.WithLoadScreen => new SceneLoaderWithLoadingScreen(_loadingWindow, unitySceneLoader, _sceneLoadingView),
                 SceneLoadMode.WithFadeScreen => new SceneLoaderWithFadeScreen(_screen, unitySceneLoader),
                 _ => throw new ArgumentOutOfRangeException(nameof(_sceneLoadMode))
             };

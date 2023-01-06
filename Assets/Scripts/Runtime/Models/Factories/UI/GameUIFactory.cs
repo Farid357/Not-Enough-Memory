@@ -4,8 +4,8 @@ using System.Linq;
 using NotEnoughMemory.Game;
 using NotEnoughMemory.UI;
 using NotEnoughMemory.UI.UnityDropDown;
-using NotEnoughMemory.View;
 using UnityEngine;
+using QualitySettings = NotEnoughMemory.UI.QualitySettings;
 
 namespace NotEnoughMemory.Factories
 {
@@ -26,7 +26,7 @@ namespace NotEnoughMemory.Factories
             IUI ui = _unity.UI;
             ui.UnityButtons.Exit.Init(new SceneLoadButton(_unity.SceneLoader, _unity.Scenes.Menu));
             ui.UnityButtons.CloseExitWindow.Init(new CloseWindowButton(_gameTime, ui.Windows.Exit));
-            IDropdown<IQualityDropdownOption> qualityDropdown = new QualityDropdown(new TextView(ui.Texts.QualityLevel));
+            IDropdown<IQualityDropdownOption> qualityDropdown = new QualityDropdown(new QualitySettings());
             IUnityDropdown unityQualityDropdown = new UnityDropdown<IQualityDropdownOption>(ui.Dropdowns.QualityLevel, CreateQualityOptions(), qualityDropdown);
             unityQualityDropdown.Enable();
         }
