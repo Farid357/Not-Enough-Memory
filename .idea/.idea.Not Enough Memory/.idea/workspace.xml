@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a31715e8-009c-48a9-b99a-b89c3083f3a8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Random/Chances/FiftyFiftyChance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Random/Chances/FiftyFiftyChance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Random/Chances/IChance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Random/Chances/IChance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Random/Chances/OneQuarterChance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Random/Chances/OneQuarterChance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Random/IRandom.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Random/IRandom.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Random/Random.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Random/Random.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/TelephoneBreaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Telephone/TelephoneBreaker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/DummyChance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/DummyChance.cs" afterDir="false" />
-    </list>
+    <list default="true" id="a31715e8-009c-48a9-b99a-b89c3083f3a8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +90,7 @@
       <workItem from="1672947208163" duration="3315000" />
       <workItem from="1673007548445" duration="12144000" />
       <workItem from="1673034048152" duration="7171000" />
-      <workItem from="1673082389050" duration="1175000" />
+      <workItem from="1673082389050" duration="1299000" />
     </task>
     <servers />
   </component>
