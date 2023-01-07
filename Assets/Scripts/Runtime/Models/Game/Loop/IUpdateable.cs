@@ -1,6 +1,6 @@
 ﻿namespace NotEnoughMemory.Game.Loop
 {
-    public interface IUpdateble
+    public interface IUpdateable
     {
         void Update(float deltaTime);
     }

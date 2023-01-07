@@ -2,6 +2,6 @@
 {
     public interface IChance
     {
-        bool IsLucky();
+        bool TryGetLucky();
     }
 }

@@ -3,18 +3,18 @@ using System.Collections.Generic;
 
 namespace NotEnoughMemory.Game.Loop
 {
-    public sealed class LateGameUpdate : ILateGameUpdate, ILateUpdateble
+    public sealed class LateGameUpdate : ILateGameUpdate, ILateUpdateable
     {
-        private readonly List<ILateUpdateble> _updateables = new();
+        private readonly List<ILateUpdateable> _updateables = new();
 
-        public IReadOnlyList<ILateUpdateble> Updateables => _updateables;
+        public IReadOnlyList<ILateUpdateable> Updateables => _updateables;
         
         public void LateUpdate()
         {
             _updateables.ForEach(updateable => updateable.LateUpdate());
         }
 
-        public void Add(params ILateUpdateble[] updateables)
+        public void Add(params ILateUpdateable[] updateables)
         {
             if (updateables == null)
                 throw new ArgumentNullException(nameof(updateables));

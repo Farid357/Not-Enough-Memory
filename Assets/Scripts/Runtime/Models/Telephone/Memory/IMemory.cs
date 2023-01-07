@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.Model
 {
-    public interface IMemory : IReadOnlyMemory, ILateUpdateble
+    public interface IMemory : IReadOnlyMemory, ILateUpdateable
     {
         void Clear();
 

@@ -9,7 +9,7 @@ namespace NotEnoughMemory.Model
             if (chance == null) 
                 throw new ArgumentNullException(nameof(chance));
 
-            return chance.IsLucky();
+            return chance.TryGetLucky();
         }
     }
 }

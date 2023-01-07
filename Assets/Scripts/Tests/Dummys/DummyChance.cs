@@ -11,7 +11,7 @@ namespace NotEnoughMemory.Tests.Dummys
             _isLucky = isLucky;
         }
 
-        public bool IsLucky()
+        public bool TryGetLucky()
         {
             return _isLucky;
         }

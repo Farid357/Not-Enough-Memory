@@ -3,25 +3,25 @@ using System.Collections.Generic;
 
 namespace NotEnoughMemory.Game.Loop
 {
-    public sealed class FixedGameUpdate : IFixedGameUpdate, IFixedUpdateble
+    public sealed class FixedGameUpdate : IFixedGameUpdate, IFixedUpdateable
     {
-        private readonly List<IFixedUpdateble> _updatebles = new();
+        private readonly List<IFixedUpdateable> _updateables = new();
         
-        public IReadOnlyList<IFixedUpdateble> Updatebles => _updatebles;
+        public IReadOnlyList<IFixedUpdateable> Updateables => _updateables;
 
         public void FixedUpdate(float fixedDeltaTime)
         {
-            _updatebles.ForEach(updateable => updateable.FixedUpdate(fixedDeltaTime));
+            _updateables.ForEach(updateable => updateable.FixedUpdate(fixedDeltaTime));
         }
         
-        public void Add(params IFixedUpdateble[] updatebles)
+        public void Add(params IFixedUpdateable[] updateables)
         {
-            if (updatebles == null)
-                throw new ArgumentNullException(nameof(updatebles));
+            if (updateables == null)
+                throw new ArgumentNullException(nameof(updateables));
 
-            foreach (var updateable in updatebles)
+            foreach (var updateable in updateables)
             {
-                _updatebles.Add(updateable);
+                _updateables.Add(updateable);
             }
         }
     }
