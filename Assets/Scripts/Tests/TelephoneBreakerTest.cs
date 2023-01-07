@@ -11,7 +11,7 @@ namespace NotEnoughMemory.Tests
         public void BrakesCorrectly()
         {
             ITelephone telephone = new Telephone(new DummyTelephoneView(false), new DummyMemory(), new DummyMemoryView());
-            ITelephoneBreaker telephoneBreaker = new TelephoneBreaker(new DummyChance(isLucky: false));
+            ITelephoneBreaker telephoneBreaker = new TelephoneBreaker( new Random(new DummyChance(isLucky: false)));
             Assert.That(telephoneBreaker.TryBreak(telephone) == false);
         }
 

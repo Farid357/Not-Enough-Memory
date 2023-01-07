@@ -4,14 +4,14 @@ namespace NotEnoughMemory.Model
 {
     public sealed class TelephoneBreaker : ITelephoneBreaker
     {
-        private readonly IChance _brakeChance;
+        private readonly IRandom _random;
 
-        public TelephoneBreaker(IChance brakeChance)
+        public TelephoneBreaker(IRandom random)
         {
-            _brakeChance = brakeChance ?? throw new ArgumentNullException(nameof(brakeChance));
+            _random = random ?? throw new ArgumentNullException(nameof(random));
         }
 
-        public TelephoneBreaker() : this(new OneQuarterChance())
+        public TelephoneBreaker() : this(new Random(new OneQuarterChance()))
         {
             
         }
@@ -21,7 +21,7 @@ namespace NotEnoughMemory.Model
             if (telephone is null)
                 throw new ArgumentNullException(nameof(telephone));
             
-            if (_brakeChance.TryLuck())
+            if (_random.TryLuck())
             {
                 telephone.Break();
                 return true;
