@@ -4,7 +4,7 @@
     {
         private readonly System.Random _random = new();
         
-        public bool TryGetLucky()
+        public bool TryLuck()
         {
             return _random.Next(0, 2) == 0;
         }
