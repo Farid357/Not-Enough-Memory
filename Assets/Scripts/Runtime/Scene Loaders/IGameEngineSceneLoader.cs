@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.SceneLoading
 {
-    public interface IUnitySceneLoader : ISceneLoader
+    public interface IGameEngineSceneLoader : ISceneLoader
     {
         AsyncOperation LoadAsync(IScene scene);
     }

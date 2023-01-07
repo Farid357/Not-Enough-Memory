@@ -7,7 +7,7 @@ using NotEnoughMemory.UI;
 
 namespace NotEnoughMemory.Factories
 {
-    public sealed class QualityDropdownFactory
+    public sealed class QualityDropdownFactory : IDropdownFactory
     {
         private readonly IUI _ui;
 
@@ -20,7 +20,7 @@ namespace NotEnoughMemory.Factories
         {
             IDropdown<IQualityDropdownOption> qualityDropdown = new QualityDropdown(new QualitySettings());
             List<IQualityDropdownOption> options = CreateQualityOptions();
-            IUnityDropdown unityQualityDropdown = new UnityDropdown<IQualityDropdownOption>(_ui.Dropdowns.QualityLevel, options, qualityDropdown
+            IGameEngineDropdown unityQualityDropdown = new UnityDropdown<IQualityDropdownOption>(_ui.Dropdowns.QualityLevel, options, qualityDropdown
             , new BinaryStorage<int>(new Path(nameof(UnityDropdown<IQualityDropdownOption>))));
             UnityEngine.Debug.Log("Enable dropdown");
             unityQualityDropdown.Enable();

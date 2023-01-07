@@ -1,6 +1,6 @@
 ﻿namespace NotEnoughMemory.UI
 {
-    public interface IUnityButton
+    public interface IGameEngineButton
     {
         void Init(IButton button);
     }

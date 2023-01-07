@@ -5,7 +5,7 @@ using TMPro;
 
 namespace NotEnoughMemory.UI
 {
-    public sealed class UnityDropdown<TOption> : IDisposable, IUnityDropdown where TOption : IDropDownOption
+    public sealed class UnityDropdown<TOption> : IDisposable, IGameEngineDropdown where TOption : IDropDownOption
     {
         private readonly TMP_Dropdown _unityDropdown;
         private readonly IDropdown<TOption> _dropdown;

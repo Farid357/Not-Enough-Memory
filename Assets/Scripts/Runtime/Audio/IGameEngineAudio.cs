@@ -1,6 +1,6 @@
 ﻿namespace NotEnoughMemory.Audio
 {
-    public interface IUnityAudio : IAudio
+    public interface IGameEngineAudio : IAudio
     {
         void PlayOneShot();
     }

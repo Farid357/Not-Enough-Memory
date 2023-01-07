@@ -2,7 +2,7 @@
 {
     public interface IUI
     {
-        IUnityButtons UnityButtons { get; }
+        IGameEngineButtons GameEngineButtons { get; }
         
         ITexts Texts { get; }
         
@@ -11,5 +11,7 @@
         IScrollBars ScrollBars { get; }
         
         IDropdowns Dropdowns { get; }
+        
+        IScreen Screen { get; }
     }
 }

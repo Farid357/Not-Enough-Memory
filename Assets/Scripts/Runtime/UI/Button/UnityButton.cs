@@ -5,7 +5,7 @@ using UnityEngine.UI;
 namespace NotEnoughMemory.UI
 {
     [RequireComponent(typeof(Button))]
-    public sealed class UnityButton : MonoBehaviour, IUnityButton
+    public sealed class UnityButton : MonoBehaviour, IGameEngineButton
     {
         private IButton _button;
         private Button _unityButton;

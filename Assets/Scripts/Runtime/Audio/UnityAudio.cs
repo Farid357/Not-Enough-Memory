@@ -3,7 +3,7 @@
 namespace NotEnoughMemory.Audio
 {
     [RequireComponent(typeof(AudioSource))]
-    public sealed class UnityAudio : MonoBehaviour, IUnityAudio
+    public sealed class UnityAudio : MonoBehaviour, IGameEngineAudio
     {
         private AudioSource _audioSource;
 

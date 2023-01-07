@@ -4,9 +4,9 @@ namespace NotEnoughMemory.Audio
 {
     public sealed class Sound : IAudio
     {
-        private readonly IUnityAudio _audio;
+        private readonly IGameEngineAudio _audio;
 
-        public Sound(IUnityAudio audio)
+        public Sound(IGameEngineAudio audio)
         {
             _audio = audio ?? throw new ArgumentNullException(nameof(audio));
         }

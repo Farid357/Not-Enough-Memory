@@ -4,7 +4,7 @@ namespace NotEnoughMemory.Tests.Dummys
 {
     public sealed class DummyUI : IUI
     {
-        public IUnityButtons UnityButtons { get; }
+        public IGameEngineButtons GameEngineButtons { get; }
         
         public ITexts Texts => new DummyTexts();
 
@@ -13,5 +13,7 @@ namespace NotEnoughMemory.Tests.Dummys
         public IScrollBars ScrollBars { get; }
         
         public IDropdowns Dropdowns { get; }
+        
+        public IScreen Screen => new DummyScreen();
     }
 }

@@ -2,8 +2,8 @@
 {
     public interface IAudios
     {
-        IUnityAudio Music { get; }
+        IGameEngineAudio Music { get; }
         
-        IUnityAudio TelephonePress { get; }
+        IGameEngineAudio TelephonePress { get; }
     }
 }

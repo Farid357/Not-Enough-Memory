@@ -7,8 +7,8 @@ namespace NotEnoughMemory.Audio
         [SerializeField] private UnityAudio _music;
         [SerializeField] private UnityAudioWithRandomPlayingClip _telephonePress;
 
-        public IUnityAudio Music => _music;
+        public IGameEngineAudio Music => _music;
 
-        public IUnityAudio TelephonePress => _telephonePress;
+        public IGameEngineAudio TelephonePress => _telephonePress;
     }
 }

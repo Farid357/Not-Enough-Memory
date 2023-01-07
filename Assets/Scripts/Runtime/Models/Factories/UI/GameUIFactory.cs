@@ -7,21 +7,22 @@ namespace NotEnoughMemory.Factories
     //Need Refactoring
     public sealed class GameUIFactory : IGameUIFactory
     {
-        private readonly IUnity _unity;
+        private readonly IGameEngine _gameEngine;
         private readonly IGameTime _gameTime;
 
-        public GameUIFactory(IUnity unity, IGameTime gameTime)
+        public GameUIFactory(IGameEngine gameEngine, IGameTime gameTime)
         {
-            _unity = unity ?? throw new ArgumentNullException(nameof(unity));
+            _gameEngine = gameEngine ?? throw new ArgumentNullException(nameof(gameEngine));
             _gameTime = gameTime ?? throw new ArgumentNullException(nameof(gameTime));
         }
 
         public void Create()
         {
-            IUI ui = _unity.UI;
-            ui.UnityButtons.Exit.Init(new SceneLoadButton(_unity.SceneLoader, _unity.Scenes.Menu));
-            ui.UnityButtons.CloseExitWindow.Init(new CloseWindowButton(_gameTime, ui.Windows.Exit));
-            new QualityDropdownFactory(ui).Create();
+            IUI ui = _gameEngine.UI;
+            ui.GameEngineButtons.Exit.Init(new SceneLoadButton(_gameEngine.SceneLoader, _gameEngine.Scenes.Menu));
+            ui.GameEngineButtons.CloseExitWindow.Init(new CloseWindowButton(_gameTime, ui.Windows.Exit));
+            IDropdownFactory qualityDropdownFactory = new QualityDropdownFactory(ui);
+            qualityDropdownFactory.Create();
         }
     }
 }

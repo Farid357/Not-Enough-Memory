@@ -5,7 +5,7 @@ using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
 
-namespace NotEnoughMemory.View
+namespace NotEnoughMemory.UI
 {
     public sealed class Screen : MonoBehaviour, IScreen
     {

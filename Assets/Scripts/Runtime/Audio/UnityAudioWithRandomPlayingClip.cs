@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.Audio
 {
-    public sealed class UnityAudioWithRandomPlayingClip : MonoBehaviour, IUnityAudio
+    public sealed class UnityAudioWithRandomPlayingClip : MonoBehaviour, IGameEngineAudio
     {
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private AudioClip[] _clips;

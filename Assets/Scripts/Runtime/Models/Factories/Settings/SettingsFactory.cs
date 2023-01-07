@@ -7,11 +7,11 @@ namespace NotEnoughMemory.Factories
 {
     public sealed class SettingsFactory : ISettingsFactory
     {
-        private readonly IUnityButtons _buttons;
+        private readonly IGameEngineButtons _buttons;
         private readonly ISaveStorages _saveStorages;
         private readonly IAudio _music;
 
-        public SettingsFactory(IUnityButtons buttons, ISaveStorages saveStorages, IAudio music)
+        public SettingsFactory(IGameEngineButtons buttons, ISaveStorages saveStorages, IAudio music)
         {
             _buttons = buttons ?? throw new ArgumentNullException(nameof(buttons));
             _saveStorages = saveStorages ?? throw new ArgumentNullException(nameof(saveStorages));

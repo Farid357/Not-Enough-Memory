@@ -6,7 +6,7 @@ using NotEnoughMemory.View;
 
 namespace NotEnoughMemory.Game
 {
-    public sealed class Unity : IUnity
+    public sealed class Unity : IGameEngine
     {
         public Unity(IViews views, IUI ui, IScenes scenes, ISceneLoader sceneLoader)
         {

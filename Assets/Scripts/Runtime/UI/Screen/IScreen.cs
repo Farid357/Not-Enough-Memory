@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace NotEnoughMemory.View
+namespace NotEnoughMemory.UI
 {
     public interface IScreen
     {

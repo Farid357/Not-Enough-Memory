@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace NotEnoughMemory.SceneLoading
 {
-    public sealed class UnitySceneLoader : IUnitySceneLoader
+    public sealed class UnitySceneLoader : IGameEngineSceneLoader
     {
         private readonly LoadSceneMode _loadSceneMode;
 

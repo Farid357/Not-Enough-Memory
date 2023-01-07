@@ -1,17 +1,17 @@
 ﻿using System;
-using NotEnoughMemory.View;
+using NotEnoughMemory.UI;
 
 namespace NotEnoughMemory.SceneLoading
 {
     public sealed class SceneLoaderWithFadeScreen : ISceneLoader
     {
         private readonly IScreen _screen;
-        private readonly IUnitySceneLoader _unitySceneLoader;
+        private readonly IGameEngineSceneLoader _sceneLoader;
 
-        public SceneLoaderWithFadeScreen(IScreen screen, IUnitySceneLoader unitySceneLoader)
+        public SceneLoaderWithFadeScreen(IScreen screen, IGameEngineSceneLoader sceneLoader)
         {
             _screen = screen ?? throw new ArgumentNullException(nameof(screen));
-            _unitySceneLoader = unitySceneLoader ?? throw new ArgumentNullException(nameof(unitySceneLoader));
+            _sceneLoader = sceneLoader ?? throw new ArgumentNullException(nameof(sceneLoader));
         }
 
         public async void Load(IScene scene)
@@ -20,7 +20,7 @@ namespace NotEnoughMemory.SceneLoading
                 throw new ArgumentNullException(nameof(scene));
             
             await _screen.FadeIn();
-            _unitySceneLoader.LoadAsync(scene);
+            _sceneLoader.LoadAsync(scene);
             _screen.FadeOut();
         }
     }

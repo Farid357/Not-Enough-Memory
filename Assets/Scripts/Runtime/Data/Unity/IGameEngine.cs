@@ -6,7 +6,7 @@ using NotEnoughMemory.View;
 
 namespace NotEnoughMemory.Game
 {
-    public interface IUnity
+    public interface IGameEngine
     {
         IViews Views { get; }
         

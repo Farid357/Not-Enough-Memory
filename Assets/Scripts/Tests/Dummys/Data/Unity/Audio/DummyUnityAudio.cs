@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.Tests.Dummys
 {
-    public sealed class DummyUnityAudio : IUnityAudio
+    public sealed class DummyUnityAudio : IGameEngineAudio
     {
         public bool IsPlaying { get; }
         

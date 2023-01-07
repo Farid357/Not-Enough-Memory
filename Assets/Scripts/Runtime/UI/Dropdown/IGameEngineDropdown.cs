@@ -1,6 +1,6 @@
 ﻿namespace NotEnoughMemory.UI
 {
-    public interface IUnityDropdown
+    public interface IGameEngineDropdown
     {
         void Enable();
     }

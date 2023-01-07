@@ -8,13 +8,13 @@ namespace NotEnoughMemory.SceneLoading
     public sealed class SceneLoaderWithLoadingScreen : ISceneLoader
     {
         private readonly IWindow _loadingWindow;
-        private readonly IUnitySceneLoader _unitySceneLoader;
+        private readonly IGameEngineSceneLoader _gameEngineSceneLoader;
         private readonly ISceneLoadingView _sceneLoadingView;
 
-        public SceneLoaderWithLoadingScreen(IWindow loadingWindow, IUnitySceneLoader unitySceneLoader, ISceneLoadingView sceneLoadingView)
+        public SceneLoaderWithLoadingScreen(IWindow loadingWindow, IGameEngineSceneLoader gameEngineSceneLoader, ISceneLoadingView sceneLoadingView)
         {
             _loadingWindow = loadingWindow ?? throw new ArgumentNullException(nameof(loadingWindow));
-            _unitySceneLoader = unitySceneLoader ?? throw new ArgumentNullException(nameof(unitySceneLoader));
+            _gameEngineSceneLoader = gameEngineSceneLoader ?? throw new ArgumentNullException(nameof(gameEngineSceneLoader));
             _sceneLoadingView = sceneLoadingView ?? throw new ArgumentNullException(nameof(sceneLoadingView));
         }
 
@@ -35,7 +35,7 @@ namespace NotEnoughMemory.SceneLoading
                 time += 0.1f;
             }
 
-            var sceneLoadOperation = _unitySceneLoader.LoadAsync(scene);
+            var sceneLoadOperation = _gameEngineSceneLoader.LoadAsync(scene);
 
             while (!sceneLoadOperation.isDone)
             {

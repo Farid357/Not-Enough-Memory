@@ -4,8 +4,8 @@ namespace NotEnoughMemory.Tests.Dummys
 {
     public sealed class DummyAudios : IAudios
     {
-        public IUnityAudio Music => new DummyUnityAudio();
+        public IGameEngineAudio Music => new DummyUnityAudio();
         
-        public IUnityAudio TelephonePress => new DummyUnityAudio();
+        public IGameEngineAudio TelephonePress => new DummyUnityAudio();
     }
 }

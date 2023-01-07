@@ -3,19 +3,63 @@
   <component name="ChangeListManager">
     <list default="true" id="a31715e8-009c-48a9-b99a-b89c3083f3a8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Not Enough Memory/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Not Enough Memory/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/EntryPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/ExitButton — копия.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Sprites/ExitButton — копия.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Scriptable Objects/Scenes/Game.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Scriptable Objects/Scenes/Game.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Scriptable Objects/Scenes/Menu.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Scriptable Objects/Scenes/Menu.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Audio/IUnityAudio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Audio/IGameEngineAudio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Audio/IUnityAudio.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Audio/IGameEngineAudio.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Audio/UnityAudio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Audio/UnityAudio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Audio/UnityAudioWithRandomPlayingClip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Audio/UnityAudioWithRandomPlayingClip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/Audio/Audios.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/Audio/Audios.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/Audio/IAudios.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/Audio/IAudios.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/IUnity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/IGameEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/IUnity.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/IGameEngine.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Buttons/IUnityButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Buttons/IGameEngineButtons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Buttons/IUnityButtons.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Buttons/IGameEngineButtons.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Buttons/UnityButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Buttons/UnityButtons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/IUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/IUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/UI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/UI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/Unity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/Unity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/EntryPoint/EntryPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/EntryPoint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/EntryPoint/EntryPoint.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Audio/Music.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Audio/Music.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Audio/Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Audio/Sound.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/Input/InputsFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/Input/InputsFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/SceneLoaderFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/SceneLoaderFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/Settings/SettingsFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/Settings/SettingsFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/Telephone/TelephoneFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/Telephone/TelephoneFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/UI/Dropdowns/QualityDropdownFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/UI/Dropdowns/QualityDropdownFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/UI/GameUIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/UI/GameUIFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Input/OpenWindowInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Input/OpenWindowInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Scene Loaders/SceneLoadMode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Scene Loaders/SceneLoadMode.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Scene Loaders/SceneLoaderWithFadeScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Scene Loaders/SceneLoaderWithFadeScreen.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Scene Loaders/SceneLoaderWithLoadingScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Scene Loaders/SceneLoaderWithLoadingScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/UI/Dropdowns/IQualityDropdownOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/UI/Dropdowns/IQualityDropdownOption.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/UI/Dropdowns/QualityDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/UI/Dropdowns/QualityDropdown.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/UI/Dropdowns/QualityDropdownOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/UI/Dropdowns/QualityDropdownOption.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Settings/IQualitySettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Settings/IQualitySettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Settings/QualitySettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Settings/QualitySettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Dropdown/IDropDownOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Dropdown/IDropDownOption.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Dropdown/IDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Dropdown/IDropdown.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Dropdown/IUnityDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Dropdown/IUnityDropdown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Scene Loaders/IUnitySceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Scene Loaders/IGameEngineSceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Scene Loaders/IUnitySceneLoader.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Scene Loaders/IGameEngineSceneLoader.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Scene Loaders/SceneLoader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Scene Loaders/SceneLoader.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Scene Loaders/UnitySceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Scene Loaders/UnitySceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Button/IUnityButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Button/IGameEngineButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Button/IUnityButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Button/IGameEngineButton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Button/UnityButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Button/UnityButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Dropdown/IUnityDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Dropdown/IGameEngineDropdown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Dropdown/IUnityDropdown.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Dropdown/IGameEngineDropdown.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Dropdown/UnityDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Dropdown/UnityDropdown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Views/SceneLoading/SceneLoadingView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Views/SceneLoading/SceneLoadingView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Views/Screen.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Screen.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Views/Screen/IScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Screen/IScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Views/Screen/IScreen.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Screen/IScreen.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Views/Screen/Screen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Screen/Screen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Views/Screen/Screen.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Screen/Screen.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/Data/Unity/Audio/DummyAudios.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/Data/Unity/Audio/DummyAudios.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/Data/Unity/Audio/DummyUnityAudio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/Data/Unity/Audio/DummyUnityAudio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/Data/Unity/UI/DummyUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/Data/Unity/UI/DummyUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +72,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bae255e3e08e46f7bc2fbd23dde96338158800/e3/738fe3ab/QualityLevel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Random/IRandom.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Random/Random.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Runtime/Scene Loaders/SceneLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Scroll Bar/IScrollBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Runtime/UI/Scroll Bar/UnityScrollBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tests/MemoryTest.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,7 +98,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.statistic.project.settings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -108,6 +151,7 @@
       <workItem from="1673007548445" duration="12144000" />
       <workItem from="1673034048152" duration="7171000" />
       <workItem from="1673082389050" duration="1299000" />
+      <workItem from="1673102747423" duration="655000" />
     </task>
     <servers />
   </component>
@@ -130,5 +174,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
