@@ -1,6 +1,6 @@
 ﻿namespace NotEnoughMemory.Game.Loop
 {
-    public sealed class GameLoop : IUpdateable, IFixedUpdateable, ILateUpdateable, IGameLoop
+    public sealed class GameLoop : IGameLoop
     {
         private readonly LateGameUpdate _lateGameUpdate = new();
         private readonly FixedGameUpdate _fixedGameUpdate = new();

@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.Model
 {
-    public interface ITelephone : IUpdateable
+    public interface ITelephone : IUpdateble
     {
         bool IsBroken { get; }
         

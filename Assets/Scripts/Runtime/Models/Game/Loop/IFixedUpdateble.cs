@@ -1,6 +1,6 @@
 ﻿namespace NotEnoughMemory.Game.Loop
 {
-    public interface IFixedUpdateable
+    public interface IFixedUpdateble
     {
         void FixedUpdate(float fixedDeltaTime);
     }

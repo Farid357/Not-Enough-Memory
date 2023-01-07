@@ -4,8 +4,8 @@ namespace NotEnoughMemory.Game.Loop
 {
     public interface ILateGameUpdate
     {
-        IReadOnlyList<ILateUpdateable> Updateables { get; }
+        IReadOnlyList<ILateUpdateble> Updateables { get; }
         
-        void Add(params ILateUpdateable[] updateables);
+        void Add(params ILateUpdateble[] updateables);
     }
 }

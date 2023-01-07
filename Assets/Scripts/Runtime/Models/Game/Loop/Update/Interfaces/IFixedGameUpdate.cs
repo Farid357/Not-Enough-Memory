@@ -4,8 +4,8 @@ namespace NotEnoughMemory.Game.Loop
 {
     public interface IFixedGameUpdate
     {
-        IReadOnlyList<IFixedUpdateable> Updateables { get; }
+        IReadOnlyList<IFixedUpdateble> Updatebles { get; }
 
-        void Add(params IFixedUpdateable[] updateables);
+        void Add(params IFixedUpdateble[] updatebles);
     }
 }

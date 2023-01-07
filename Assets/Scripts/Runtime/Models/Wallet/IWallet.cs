@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.Model
 {
-    public interface IWallet : ILateUpdateable
+    public interface IWallet : ILateUpdateble
     {
         Money Money { get; }
         

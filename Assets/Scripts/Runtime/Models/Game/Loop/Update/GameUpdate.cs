@@ -3,27 +3,27 @@ using System.Collections.Generic;
 
 namespace NotEnoughMemory.Game.Loop
 {
-    public sealed class GameUpdate : IGameUpdate, IUpdateable
+    public sealed class GameUpdate : IGameUpdate, IUpdateble
     {
-        private readonly List<IUpdateable> _updateables;
+        private readonly List<IUpdateble> _updateables;
 
-        public GameUpdate(List<IUpdateable> updateables)
+        public GameUpdate(List<IUpdateble> updateables)
         {
             _updateables = updateables ?? throw new ArgumentNullException(nameof(updateables));
         }
 
-        public GameUpdate() : this(new List<IUpdateable>())
+        public GameUpdate() : this(new List<IUpdateble>())
         {
         }
 
-        public IReadOnlyList<IUpdateable> Updateables => _updateables;
+        public IReadOnlyList<IUpdateble> Updateables => _updateables;
 
         public void Update(float deltaTime)
         {
             _updateables.ForEach(updateable => updateable.Update(deltaTime));
         }
 
-        public void Add(params IUpdateable[] updateables)
+        public void Add(params IUpdateble[] updateables)
         {
             if (updateables == null)
                 throw new ArgumentNullException(nameof(updateables));
@@ -31,15 +31,15 @@ namespace NotEnoughMemory.Game.Loop
             _updateables.AddRange(updateables);
         }
 
-        public void Remove(IUpdateable updateable)
+        public void Remove(IUpdateble updateble)
         {
-            if (updateable == null)
-                throw new ArgumentNullException(nameof(updateable));
+            if (updateble == null)
+                throw new ArgumentNullException(nameof(updateble));
 
-            if (_updateables.Contains(updateable) == false)
-                throw new InvalidOperationException($"{nameof(GameUpdate)} doesn't contain {updateable}");
+            if (_updateables.Contains(updateble) == false)
+                throw new InvalidOperationException($"{nameof(GameUpdate)} doesn't contain {updateble}");
 
-            _updateables.Remove(updateable);
+            _updateables.Remove(updateble);
         }
     }
 }

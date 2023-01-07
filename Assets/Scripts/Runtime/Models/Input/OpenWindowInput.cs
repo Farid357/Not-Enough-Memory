@@ -5,7 +5,7 @@ using NotEnoughMemory.UI;
 
 namespace NotEnoughMemory.Input
 {
-    public sealed class OpenWindowInput : IUpdateable
+    public sealed class OpenWindowInput : IUpdateble
     {
         private readonly IKeyDownInput _keyDownInput;
         private readonly IWindow _window;
