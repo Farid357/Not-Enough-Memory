@@ -1,5 +1,4 @@
 ﻿using System;
-using NotEnoughMemory.UI.UnityDropDown;
 
 namespace NotEnoughMemory.UI
 {

@@ -1,5 +1,4 @@
-﻿using NotEnoughMemory.UI.UnityDropDown;
-using UnityEngine;
+﻿using NotEnoughMemory.Settings;
 
 namespace NotEnoughMemory.UI
 {

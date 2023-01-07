@@ -1,4 +1,4 @@
-﻿namespace NotEnoughMemory.UI.UnityDropDown
+﻿namespace NotEnoughMemory.UI
 {
     public interface IDropdown<in TOption>
     {

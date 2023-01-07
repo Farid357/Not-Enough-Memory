@@ -26,7 +26,6 @@ namespace NotEnoughMemory.SceneLoading
             _loadingWindow.Open();
             var time = 0f;
             const float loadingTime = 2f;
-            const float toPercents = 100f;
 
             while (time < loadingTime)
             {
