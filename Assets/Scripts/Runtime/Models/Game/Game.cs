@@ -1,5 +1,4 @@
-﻿using NotEnoughMemory.Audio;
-using NotEnoughMemory.Factories;
+﻿using NotEnoughMemory.Factories;
 using NotEnoughMemory.Game.Loop;
 using NotEnoughMemory.Menu;
 using NotEnoughMemory.Model;
@@ -14,6 +13,8 @@ namespace NotEnoughMemory.Game
         private readonly IGameUIFactory _uiFactory;
         private readonly IInputsFactory _inputsFactory;
         private readonly IMenu _menu;
+        private readonly IGameTime _time = new GameTime();
+        private readonly IGameLoop _loop = new GameLoop();
 
         public Game(IGameEngine engine)
         {
@@ -22,16 +23,12 @@ namespace NotEnoughMemory.Game
             ISaveStorages saveStorages = new SaveStorages();
             IFactory<IWallet> walletFactory = new WalletFactory(new TextView(ui.Texts.Money), saveStorages);
             IWallet wallet = walletFactory.Create();
-            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(Loop, engine, wallet);
+            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(_loop, engine, wallet);
             ITelephone telephone = telephoneFactory.Create();
-            _inputsFactory = new InputsFactory(ui.Windows, Loop.GameUpdate);
+            _inputsFactory = new InputsFactory(ui.Windows, _loop.GameUpdate);
             _uiFactory = new GameUIFactory(engine, saveStorages);
-            engine.Loop.Add(Loop, Time);
+            engine.Loop.Add(_loop, _time);
         }
-
-        public IGameTime Time { get; } = new GameTime();
-
-        public IGameLoop Loop { get; } = new GameLoop();
         
         public void Play()
         {
