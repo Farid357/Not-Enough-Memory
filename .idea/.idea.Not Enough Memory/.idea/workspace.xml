@@ -3,25 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="a31715e8-009c-48a9-b99a-b89c3083f3a8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Not Enough Memory/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Not Enough Memory/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Buttons/IGameEngineButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Buttons/IGameEngineButtons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Buttons/UnityButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Buttons/UnityButtons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Windows/IWindows.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Windows/IWindows.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Windows/Windows.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/UI/Windows/Windows.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/IGameEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/IGameEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/Unity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Data/Unity/Unity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/EntryPoint/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/EntryPoint/EntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/UI/Dropdowns/QualityDropdownFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/UI/Dropdowns/QualityDropdownFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/UI/GameUIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/UI/GameUIFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/UI/Menu/MenuUIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/UI/Menu/MenuUIFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/UI/Settings/SettingsFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Factories/UI/Settings/SettingsFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/EntryPoint/UnityGameLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/EntryPoint/UnityGameLoop.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Menu.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Menu.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Menu/IMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Menu/IMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Menu/IMenu.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Menu/IMenu.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Menu/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Menu/Menu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Menu/Menu.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Menu/Menu.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/UI/Buttons/CloseWindowButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/UI/Buttons/CloseWindowButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Settings/QualitySettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Settings/QualitySettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/Data/Unity/UI/DummyWindows.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/Dummys/Data/Unity/UI/DummyWindows.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/GameTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Time/GameTime.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/GameTime.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Time/GameTime.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/IGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/IGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/IGameTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Time/IGameTime.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/IGameTime.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Time/IGameTime.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/IFixedUpdateable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/Interfaces/IFixedUpdateable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/IFixedUpdateable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/Interfaces/IFixedUpdateable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/ILateUpdateable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/Interfaces/ILateUpdateable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/ILateUpdateable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/Interfaces/ILateUpdateable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/IUpdateable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/Interfaces/IUpdateable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/IUpdateable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/Interfaces/IUpdateable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/Update/GameUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/Update/GameUpdate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/Update/Interfaces/IGameUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/Update/Interfaces/IGameUpdate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Menu/IMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Menu/IMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Menu/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Menu/Menu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/TelephoneFactoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/TelephoneFactoryTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +116,7 @@
       <workItem from="1673034048152" duration="7171000" />
       <workItem from="1673082389050" duration="1299000" />
       <workItem from="1673102747423" duration="749000" />
-      <workItem from="1673183412541" duration="2759000" />
+      <workItem from="1673183412541" duration="4919000" />
     </task>
     <servers />
   </component>

@@ -8,6 +8,5 @@ namespace NotEnoughMemory.Game.Loop
 
         void Add(params IUpdateable[] updateables);
         
-        void Remove(IUpdateable updateable);
     }
 }

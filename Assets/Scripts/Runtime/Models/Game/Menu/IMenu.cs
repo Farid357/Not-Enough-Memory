@@ -2,5 +2,6 @@
 {
     public interface IMenu
     {
+        void Open();
     }
 }

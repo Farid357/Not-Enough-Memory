@@ -6,6 +6,10 @@ namespace NotEnoughMemory.Game
     {
         public bool IsActive => Time.timeScale != 0;
         
+        public float FixedDelta => Time.fixedDeltaTime;
+
+        public float Delta => Time.deltaTime;
+
         public void Stop()
         {
             Time.timeScale = 0;

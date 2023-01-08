@@ -30,16 +30,5 @@ namespace NotEnoughMemory.Game.Loop
 
             _updateables.AddRange(updateables);
         }
-
-        public void Remove(IUpdateable updateable)
-        {
-            if (updateable == null)
-                throw new ArgumentNullException(nameof(updateable));
-
-            if (_updateables.Contains(updateable) == false)
-                throw new InvalidOperationException($"{nameof(GameUpdate)} doesn't contain {updateable}");
-
-            _updateables.Remove(updateable);
-        }
     }
 }

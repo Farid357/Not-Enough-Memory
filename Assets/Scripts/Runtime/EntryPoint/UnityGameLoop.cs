@@ -1,40 +1,34 @@
 ﻿using System;
-using NotEnoughMemory.Game;
-using NotEnoughMemory.Game.Loop;
-using UnityEngine;
+using System.Collections.Generic;
 
-namespace NotEnoughMemory
+namespace NotEnoughMemory.Game.Loop
 {
-    public sealed class UnityGameLoop : MonoBehaviour
+    public sealed class UnityGameLoop : IGameEngineLoop
     {
-        private IGameLoop _gameLoop;
-        private IGameTime _gameTime;
+        private readonly List<(IGameLoop, IGameTime)> _gameLoops = new();
+        private readonly IGameEngineLoopsUpdate _gameEngineLoopsUpdate;
+        private readonly IGameEngineLoopsUpdate _gameEngineLoopsFixedUpdate;
+        private readonly IGameEngineLoopsUpdate _gameEngineLoopsLateUpdate;
 
-        public void Init(IGameLoop gameLoop, IGameTime gameTime)
+        public UnityGameLoop()
         {
-            if (_gameLoop != null)
-                throw new InvalidOperationException($"{nameof(UnityGameLoop)} already was inited!");
-
-            _gameTime = gameTime ?? throw new ArgumentNullException(nameof(gameTime));
-            _gameLoop = gameLoop ?? throw new ArgumentNullException(nameof(gameLoop));
+            _gameEngineLoopsUpdate = new GameEngineLoopsUpdate();
+            _gameEngineLoopsFixedUpdate = new GameEngineLoopsFixedUpdate();
+            _gameEngineLoopsLateUpdate = new GameEngineLoopsLateUpdate();
         }
-
-        private void Update()
+        
+        public void Add(IGameLoop gameLoop, IGameTime gameTime)
         {
-            if (_gameTime.IsActive)
-                _gameLoop.Update(Time.deltaTime);
-        }
-
-        private void LateUpdate()
-        {
-            if (_gameTime.IsActive)
-                _gameLoop.LateUpdate();
-        }
-
-        private void FixedUpdate()
-        {
-            if (_gameTime.IsActive)
-                _gameLoop.FixedUpdate(Time.fixedDeltaTime);
+            if (gameLoop == null) 
+                throw new ArgumentNullException(nameof(gameLoop));
+            
+            if (gameTime == null) 
+                throw new ArgumentNullException(nameof(gameTime));
+            
+            _gameLoops.Add((gameLoop, gameTime));
+            _gameEngineLoopsUpdate.Update(_gameLoops);
+            _gameEngineLoopsFixedUpdate.Update(_gameLoops);
+            _gameEngineLoopsLateUpdate.Update(_gameLoops);
         }
     }
 }
