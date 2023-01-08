@@ -16,19 +16,19 @@ namespace NotEnoughMemory.Game.Loop
 
         public void UpdateLoop()
         {
-            UpdateAll(UniTask.Yield(), new GameEngineLoopUpdate());
-            UpdateAll(UniTask.Yield(PlayerLoopTiming.PostLateUpdate), new GameEngineLoopLateUpdate());
-            UpdateAll(UniTask.WaitForFixedUpdate(), new GameEngineLoopFixedUpdate());
+            UpdateAll(UniTask.Yield(), new GameLoopUpdate(_gameTime));
+            UpdateAll(UniTask.Yield(PlayerLoopTiming.PostLateUpdate), new GameLoopLateUpdate());
+            UpdateAll(UniTask.WaitForFixedUpdate(), new GameLoopFixedUpdate(_gameTime));
         }
 
-        private async UniTaskVoid UpdateAll(YieldAwaitable yieldAwaitable, IGameEngineLoopUpdate gameEngineLoopUpdate)
+        private async UniTaskVoid UpdateAll(YieldAwaitable yieldAwaitable, IGameLoopUpdate gameLoopUpdate)
         {
             while (true)
             {
                 await yieldAwaitable;
 
                 if (_gameTime.IsActive)
-                    gameEngineLoopUpdate.Update(_gameLoop, _gameTime);
+                    gameLoopUpdate.Update(_gameLoop);
             }
         }
 
