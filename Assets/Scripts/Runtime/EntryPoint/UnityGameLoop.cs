@@ -1,21 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 
 namespace NotEnoughMemory.Game.Loop
 {
     public sealed class UnityGameLoop : IGameEngineLoop
     {
         private readonly List<(IGameLoop, IGameTime)> _gameLoops = new();
-        private readonly IGameEngineLoopsUpdate _gameEngineLoopsUpdate;
-        private readonly IGameEngineLoopsUpdate _gameEngineLoopsFixedUpdate;
-        private readonly IGameEngineLoopsUpdate _gameEngineLoopsLateUpdate;
-
-        public UnityGameLoop()
-        {
-            _gameEngineLoopsUpdate = new GameEngineLoopsUpdate();
-            _gameEngineLoopsFixedUpdate = new GameEngineLoopsFixedUpdate();
-            _gameEngineLoopsLateUpdate = new GameEngineLoopsLateUpdate();
-        }
         
         public void Add(IGameLoop gameLoop, IGameTime gameTime)
         {
@@ -26,9 +17,23 @@ namespace NotEnoughMemory.Game.Loop
                 throw new ArgumentNullException(nameof(gameTime));
             
             _gameLoops.Add((gameLoop, gameTime));
-            _gameEngineLoopsUpdate.Update(_gameLoops);
-            _gameEngineLoopsFixedUpdate.Update(_gameLoops);
-            _gameEngineLoopsLateUpdate.Update(_gameLoops);
+            UpdateAll(UniTask.Yield(), new GameEngineLoopUpdate());
+            UpdateAll(UniTask.Yield(PlayerLoopTiming.PostLateUpdate), new GameEngineLoopLateUpdate());
+            UpdateAll(UniTask.WaitForFixedUpdate(), new GameEngineLoopFixedUpdate());
+        }
+
+        private async UniTaskVoid UpdateAll(YieldAwaitable yieldAwaitable, IGameEngineLoopUpdate gameEngineLoopUpdate)
+        {
+            while (true)
+            {
+                await yieldAwaitable;
+
+                foreach (var (loop, time) in _gameLoops)
+                {
+                   if(time.IsActive)
+                       gameEngineLoopUpdate.Update(loop, time);
+                }
+            }
         }
     }
 }
