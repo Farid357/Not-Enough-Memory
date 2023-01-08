@@ -2,19 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a31715e8-009c-48a9-b99a-b89c3083f3a8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameEngineLoops.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameEngineLoops/GameEngineLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameEngineLoop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameEngineLoops/GameEngineLoop.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameEngineLoop.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameEngineLoops/GameEngineLoopFixedUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameLoopFixedUpdate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameEngineLoops/GameEngineLoopFixedUpdate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameLoopFixedUpdate.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameEngineLoops/GameEngineLoopLateUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameLoopLateUpdate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameEngineLoops/GameEngineLoopLateUpdate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameLoopLateUpdate.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameEngineLoops/GameEngineLoopUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameLoopUpdate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameEngineLoops/GameEngineLoopUpdate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameLoopUpdate.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameEngineLoops/IGameEngineLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/IGameEngineLoop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameEngineLoops/IGameEngineLoop.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/IGameEngineLoop.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameEngineLoops/IGameEngineLoopUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/IGameLoopUpdate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameEngineLoops/IGameEngineLoopUpdate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/IGameLoopUpdate.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Not Enough Memory/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Not Enough Memory/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameEngineLoop.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameEngineLoop.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameLoopFixedUpdate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameLoopFixedUpdate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameLoopLateUpdate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameLoopLateUpdate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameLoopUpdate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/GameLoopUpdate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/IGameEngineLoop.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/IGameEngineLoop.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/IGameLoopUpdate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/GameLoops/IGameLoopUpdate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/IGameLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Loop/IGameLoop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Time/IGameTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Models/Game/Time/IGameTime.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +113,8 @@
       <workItem from="1673082389050" duration="1299000" />
       <workItem from="1673102747423" duration="749000" />
       <workItem from="1673183412541" duration="5254000" />
-      <workItem from="1673196207537" duration="1560000" />
+      <workItem from="1673196207537" duration="1705000" />
+      <workItem from="1673201530861" duration="585000" />
     </task>
     <servers />
   </component>

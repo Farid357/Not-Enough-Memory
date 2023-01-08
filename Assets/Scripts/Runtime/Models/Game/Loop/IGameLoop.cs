@@ -1,11 +1,8 @@
 ﻿namespace NotEnoughMemory.Game.Loop
 {
-    public interface IGameLoop : IUpdateable, ILateUpdateable, IFixedUpdateable
+    public interface IGameLoop : IReadOnlyGameLoop
     {
-        ILateGameUpdate LateGameUpdate { get; }
-        
-        IFixedGameUpdate FixedGameUpdate { get; }
-        
-        IGameUpdate GameUpdate { get; }
+
+        void Update();
     }
 }
