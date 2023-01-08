@@ -1,6 +1,6 @@
 ﻿namespace NotEnoughMemory.Factories
 {
-    public interface ISettingsFactory
+    public interface IUISettingsFactory
     {
         void Create();
     }

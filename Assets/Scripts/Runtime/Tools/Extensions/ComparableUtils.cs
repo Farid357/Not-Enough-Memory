@@ -2,7 +2,7 @@
 {
     public static class ComparableUtils
     {
-        public static int TryThrowLessThanOrEqualsToZeroException(this int number)
+        public static int ThrowIfLessThanOrEqualsToZeroException(this int number)
         {
             if (number <= 0)
                 throw new LessThanOrEqualsToZeroException(nameof(number));
@@ -10,11 +10,9 @@
             return number;
         }
 
-        public static float TryThrowLessOrEqualsToZeroException(this float number)
+        public static float ThrowIfLessOrEqualsToZeroException(this float number)
         {
-            if (number <= 0)
-                throw new LessThanOrEqualsToZeroException(nameof(number));
-
+            ThrowIfLessOrEqualsToZeroException((int)number);
             return number;
         }
     }

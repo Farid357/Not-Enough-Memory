@@ -8,7 +8,7 @@ namespace NotEnoughMemory.Model
     {
         public Money(int amount)
         {
-            Amount = amount.TryThrowLessThanOrEqualsToZeroException();
+            Amount = amount.ThrowIfLessThanOrEqualsToZeroException();
         }
         
         public int Amount { get; }

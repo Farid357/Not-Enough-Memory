@@ -5,13 +5,13 @@ using NotEnoughMemory.UI;
 
 namespace NotEnoughMemory.Factories
 {
-    public sealed class SettingsFactory : ISettingsFactory
+    public sealed class UISettingsFactory : IUISettingsFactory
     {
         private readonly IGameEngineButtons _buttons;
         private readonly ISaveStorages _saveStorages;
         private readonly IAudio _music;
 
-        public SettingsFactory(IGameEngineButtons buttons, ISaveStorages saveStorages, IAudio music)
+        public UISettingsFactory(IGameEngineButtons buttons, ISaveStorages saveStorages, IAudio music)
         {
             _buttons = buttons ?? throw new ArgumentNullException(nameof(buttons));
             _saveStorages = saveStorages ?? throw new ArgumentNullException(nameof(saveStorages));

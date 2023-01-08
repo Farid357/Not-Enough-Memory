@@ -16,7 +16,7 @@ namespace NotEnoughMemory.Model
             if (IsBroken)
                 throw new InvalidOperationException("Memory is broken, you can't fill it!");
             
-            Amount += amount.TryThrowLessThanOrEqualsToZeroException();
+            Amount += amount.ThrowIfLessThanOrEqualsToZeroException();
             HasAmountChanged = true;
         }
 
@@ -45,7 +45,7 @@ namespace NotEnoughMemory.Model
             if (CanClear(amount) == false)
                 throw new InvalidOperationException("Can't clear amount!");
 
-            Amount -= amount.TryThrowLessThanOrEqualsToZeroException();
+            Amount -= amount.ThrowIfLessThanOrEqualsToZeroException();
             HasAmountChanged = true;
         }
 

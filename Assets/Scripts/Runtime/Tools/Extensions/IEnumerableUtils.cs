@@ -18,20 +18,5 @@ namespace NotEnoughMemory.Model.Tools
                 action.Invoke(item);
             }
         }
-
-        public static bool ContainsElementFrom<T>(this List<T> list, IEnumerable<T> enumerable)
-        {
-            var count = enumerable.Count() > list.Count ? enumerable.Count() : list.Count;
-
-            for (int i = 0; i < count; i++)
-            {
-                if (list.Contains(enumerable.ElementAt(i)))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
     }
 }
