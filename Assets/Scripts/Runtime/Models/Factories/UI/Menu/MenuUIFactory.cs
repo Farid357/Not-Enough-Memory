@@ -1,26 +1,24 @@
 ﻿using System;
-using NotEnoughMemory.Game;
 using NotEnoughMemory.UI;
 
 namespace NotEnoughMemory.Factories
 {
     public sealed class MenuUIFactory : IMenuUIFactory
     {
-        private readonly IGameEngine _gameEngine;
+        private readonly IUI _ui;
 
-        public MenuUIFactory(IGameEngine gameEngine)
+        public MenuUIFactory(IUI ui)
         {
-            _gameEngine = gameEngine ?? throw new ArgumentNullException(nameof(gameEngine));
+            _ui = ui ?? throw new ArgumentNullException(nameof(ui));
         }
 
         public void Create()
         {
-            IUI ui = _gameEngine.UI;
-            IGameEngineButtons gameEngineButtons = ui.GameEngineButtons;
-            IButton playButton = new SceneLoadButton(_gameEngine.SceneLoader, _gameEngine.Scenes.Game);
+            IGameEngineButtons gameEngineButtons = _ui.GameEngineButtons;
+            IButton playButton =  new Buttons(new IButton[]{new CloseWindowButton(_ui.Windows.Menu), new OpenWindowButton(_ui.Windows.Game)});
             gameEngineButtons.Play.Init(playButton);
             IButton exitButton = new ExitGameButton();
-            gameEngineButtons.Exit.Init(exitButton);
+            gameEngineButtons.ExitGame.Init(exitButton);
         }
     }
 }

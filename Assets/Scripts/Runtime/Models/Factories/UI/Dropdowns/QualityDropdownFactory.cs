@@ -22,7 +22,6 @@ namespace NotEnoughMemory.Factories
             List<IQualityDropdownOption> options = CreateQualityOptions();
             IGameEngineDropdown unityQualityDropdown = new UnityDropdown<IQualityDropdownOption>(_ui.Dropdowns.QualityLevel, options, qualityDropdown
             , new BinaryStorage<int>(new Path(nameof(UnityDropdown<IQualityDropdownOption>))));
-            UnityEngine.Debug.Log("Enable dropdown");
             unityQualityDropdown.Enable();
         }
         

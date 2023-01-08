@@ -1,6 +1,7 @@
 ﻿using NotEnoughMemory.Audio;
 using NotEnoughMemory.Factories;
 using NotEnoughMemory.Game.Loop;
+using NotEnoughMemory.Menu;
 using NotEnoughMemory.Model;
 using NotEnoughMemory.Storage;
 using NotEnoughMemory.UI;
@@ -12,7 +13,7 @@ namespace NotEnoughMemory.Game
     {
         public Game(IGameEngine engine)
         {
-           // IMenu menu = new Menu.Menu(engine);
+            IMenu menu = new Menu.Menu(engine);
             IUI ui = engine.UI;
             ISaveStorages saveStorages = new SaveStorages();
             IFactory<IWallet> walletFactory = new WalletFactory(new TextView(ui.Texts.Money), saveStorages);
@@ -20,7 +21,7 @@ namespace NotEnoughMemory.Game
             IFactory<ITelephone> telephoneFactory = new TelephoneFactory(Loop, engine, wallet);
             ITelephone telephone = telephoneFactory.Create();
             IInputsFactory inputsFactory = new InputsFactory(ui.Windows, Loop.GameUpdate);
-            IGameUIFactory uiFactory = new GameUIFactory(engine, Time, saveStorages);
+            IGameUIFactory uiFactory = new GameUIFactory(engine, saveStorages);
             uiFactory.Create();
             inputsFactory.Create();
         }

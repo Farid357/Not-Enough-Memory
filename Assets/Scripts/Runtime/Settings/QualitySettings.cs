@@ -1,4 +1,5 @@
-﻿using NotEnoughMemory.Settings;
+﻿using System;
+using NotEnoughMemory.Settings;
 
 namespace NotEnoughMemory.UI
 {
@@ -6,7 +7,22 @@ namespace NotEnoughMemory.UI
     {
         public void SelectQualityLevel(QualityLevel level)
         {
-            UnityEngine.QualitySettings.SetQualityLevel((int)level);
+            int qualityLevelIndex = QualityLevelIndex(level);
+            UnityEngine.QualitySettings.SetQualityLevel(qualityLevelIndex);
+        }
+
+        private int QualityLevelIndex(QualityLevel qualityLevel)
+        {
+            return qualityLevel switch
+            {
+                QualityLevel.Fastest => 0,
+                QualityLevel.Fast => 1,
+                QualityLevel.Simple => 2,
+                QualityLevel.Good => 3,
+                QualityLevel.Beautiful => 4,
+                QualityLevel.Fantastic => 5,
+                _ => throw new ArgumentOutOfRangeException(nameof(qualityLevel), qualityLevel, null)
+            };
         }
     }
 }

@@ -5,5 +5,9 @@
         IWindow Exit { get; }
         
         IWindow Loading { get; }
+        
+        IWindow Menu { get; }
+        
+        IWindow Game { get; }
     }
 }

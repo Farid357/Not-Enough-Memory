@@ -7,7 +7,7 @@ namespace NotEnoughMemory.Menu
     {
         public Menu(IGameEngine gameEngine)
         {
-            IMenuUIFactory uiFactory = new MenuUIFactory(gameEngine);
+            IMenuUIFactory uiFactory = new MenuUIFactory(gameEngine.UI);
             uiFactory.Create();
         }
     }
