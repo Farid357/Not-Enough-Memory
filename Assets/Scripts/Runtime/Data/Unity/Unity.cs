@@ -13,7 +13,6 @@ namespace NotEnoughMemory.Game
             Views = views ?? throw new ArgumentNullException(nameof(views));
             UI = ui ?? throw new ArgumentNullException(nameof(ui));
             Scenes = scenes ?? throw new ArgumentNullException(nameof(scenes));
-            Loop = new UnityGameLoop();
         }
 
         public IViews Views { get; }
@@ -21,7 +20,5 @@ namespace NotEnoughMemory.Game
         public IUI UI { get; }
 
         public IScenes Scenes { get; }
-        
-        public IGameEngineLoop Loop { get; }
     }
 }

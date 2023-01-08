@@ -2,6 +2,6 @@
 {
     public interface IGameEngineLoop
     {
-        void Add(IGameLoop gameLoop, IGameTime gameTime);
+        void UpdateLoop();
     }
 }

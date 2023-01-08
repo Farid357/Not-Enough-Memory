@@ -15,6 +15,7 @@ namespace NotEnoughMemory.Game
         private readonly IMenu _menu;
         private readonly IGameTime _time = new GameTime();
         private readonly IGameLoop _loop = new GameLoop();
+        private readonly IGameEngineLoop _gameEngineLoop;
 
         public Game(IGameEngine engine)
         {
@@ -27,7 +28,7 @@ namespace NotEnoughMemory.Game
             ITelephone telephone = telephoneFactory.Create();
             _inputsFactory = new InputsFactory(ui.Windows, _loop.GameUpdate);
             _uiFactory = new GameUIFactory(engine, saveStorages);
-            engine.Loop.Add(_loop, _time);
+            _gameEngineLoop = new GameEngineLoop(_time, _loop);
         }
         
         public void Play()
@@ -35,6 +36,7 @@ namespace NotEnoughMemory.Game
             _menu.Open();
             _uiFactory.Create();
             _inputsFactory.Create();
+            _gameEngineLoop.UpdateLoop();
         }
     }
 }
