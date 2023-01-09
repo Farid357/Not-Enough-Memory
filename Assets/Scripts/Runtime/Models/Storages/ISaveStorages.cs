@@ -1,10 +1,8 @@
-﻿using NotEnoughMemory.Model;
-
-namespace NotEnoughMemory.Storage
+﻿namespace NotEnoughMemory.Storage
 {
     public interface ISaveStorages
     {
-        ISaveStorage<Money> Money { get; }
+        void Add(ICanDeleteSaveStorage storage);
         
         void DeleteAllSaves();
 

@@ -23,12 +23,12 @@ namespace NotEnoughMemory.Game.Loop
 
         public void Update()
         {
-            UpdateAll(UniTask.Yield(), () => _gameUpdate.Update(_gameTime.Delta));
-            UpdateAll(UniTask.Yield(PlayerLoopTiming.PostLateUpdate), () => _lateGameUpdate.LateUpdate());
-            UpdateAll(UniTask.WaitForFixedUpdate(), () => _fixedGameUpdate.FixedUpdate(_gameTime.FixedDelta));
+            Update(UniTask.Yield(), () => _gameUpdate.Update(_gameTime.Delta));
+            Update(UniTask.Yield(PlayerLoopTiming.PostLateUpdate), _lateGameUpdate.LateUpdate);
+            Update(UniTask.WaitForFixedUpdate(), () => _fixedGameUpdate.FixedUpdate(_gameTime.FixedDelta));
         }
 
-        public async void UpdateAll(YieldAwaitable yieldAwaitable, Action updateAction)
+        private async void Update(YieldAwaitable yieldAwaitable, Action updateAction)
         {
             while (true)
             {

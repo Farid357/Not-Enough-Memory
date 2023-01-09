@@ -22,7 +22,7 @@ namespace NotEnoughMemory.Game
             _menu = new Menu.Menu(engine);
             IUI ui = engine.UI;
             ISaveStorages saveStorages = new SaveStorages();
-            IFactory<IWallet> walletFactory = new WalletFactory(new TextView(ui.Texts.Money), saveStorages);
+            IFactory<IWallet> walletFactory = new WalletFactory(new TextView(ui.Texts.Money), _loop.LateGameUpdate, saveStorages);
             IWallet wallet = walletFactory.Create();
             IFactory<ITelephone> telephoneFactory = new TelephoneFactory(_loop, engine, wallet);
             ITelephone telephone = telephoneFactory.Create();

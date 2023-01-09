@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using NotEnoughMemory.Model;
+﻿using System;
+using System.Collections.Generic;
 
 namespace NotEnoughMemory.Storage
 {
@@ -7,12 +7,12 @@ namespace NotEnoughMemory.Storage
     {
         private readonly List<ICanDeleteSaveStorage> _all = new();
         
-        public ISaveStorage<Money> Money { get; }
-
-        public SaveStorages()
+        public void Add(ICanDeleteSaveStorage storage)
         {
-            Money = new BinaryStorage<Money>(new PathWithNames<IWallet, Money>());
-            _all.Add(Money);
+            if (storage == null) 
+                throw new ArgumentNullException(nameof(storage));
+            
+            _all.Add(storage);
         }
         
         public void DeleteAllSaves()

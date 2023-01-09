@@ -1,4 +1,5 @@
 ﻿using NotEnoughMemory.Factories;
+using NotEnoughMemory.Game.Loop;
 using NotEnoughMemory.Model;
 using NotEnoughMemory.Tests.Dummys;
 using NUnit.Framework;
@@ -12,8 +13,8 @@ namespace NotEnoughMemory.Tests
         public void CreatesCorrectlyWithSave()
         {
             var savedMoney = new Money(50);
-            IFactory<IWallet> factory = new WalletFactory(new DummyTextView(),
-                new DummySaveStorages(new DummyMoneyStorage(savedMoney)));
+            IFactory<IWallet> factory = new WalletFactory(new DummyTextView(),new LateGameUpdate(),
+                new DummySaveStorages());
 
             var createdWallet = factory.Create();
             Assert.That(createdWallet.Money.Amount == savedMoney.Amount);

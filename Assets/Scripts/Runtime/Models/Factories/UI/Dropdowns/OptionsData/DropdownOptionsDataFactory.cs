@@ -19,7 +19,6 @@ namespace NotEnoughMemory.UI
             
             foreach (var option in _options)
             {
-                UnityEngine.Debug.Log("Create option");
                 optionsData.Add(new TMP_Dropdown.OptionData(option.Name));
             }
 
