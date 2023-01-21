@@ -11,7 +11,9 @@ namespace NotEnoughMemory.Model
         [SerializeField] private Image _image;
         private int _dataIndex;
         
-        public ITelephoneData Data => _data[_dataIndex];
+        public ITelephoneData CurrentData => _data[_dataIndex];
+        
+        public IReadOnlyList<ITelephoneData> AllData => _data;
 
         public bool ReadyToSwitchAppearance(int memoryFillingAmount)
         {
@@ -34,15 +36,14 @@ namespace NotEnoughMemory.Model
             _image.sprite = appearanceData.Icon;
         }
 
-        public void SwitchAppearanceToBroken()
+        public void Break()
         {
             _image.sprite = _data[_dataIndex].BrokenIcon;
         }
         
-        public void SwitchAppearanceToFixed()
+        public void Fix()
         {
-            TelephoneData appearanceData = _data[_dataIndex];
-            _image.sprite = appearanceData.Icon;
+            _image.sprite = CurrentData.Icon;
         }
     }
 }

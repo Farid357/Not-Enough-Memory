@@ -6,6 +6,8 @@ namespace NotEnoughMemory.Tests.Dummys
 {
     public sealed class DummyViews : IViews
     {
+        public IViewsFactories Factories { get; }
+        
         public IEffects Effects => new DummyEffects();
 
         public IAudios Audios => new DummyAudios();

@@ -5,6 +5,5 @@ namespace NotEnoughMemory.Storage
         TStoreValue Load();
 
         void Save(TStoreValue saveObject);
-
     }
 }

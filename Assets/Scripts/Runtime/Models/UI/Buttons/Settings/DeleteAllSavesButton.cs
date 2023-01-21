@@ -14,7 +14,8 @@ namespace NotEnoughMemory.UI
 
         public void Press()
         {
-            _saveStorages.DeleteAllSaves();
+            if (_saveStorages.HasSaves())
+                _saveStorages.DeleteAllSaves();
         }
     }
 }

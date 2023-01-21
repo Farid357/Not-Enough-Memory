@@ -27,7 +27,7 @@ namespace NotEnoughMemory.Game
             IFactory<ITelephone> telephoneFactory = new TelephoneFactory(_loop, engine, wallet);
             ITelephone telephone = telephoneFactory.Create();
             _inputsFactory = new InputsFactory(ui.Windows, _loop.GameUpdate);
-            _uiFactory = new GameUIFactory(engine, saveStorages);
+            _uiFactory = new GameUIFactory(engine, saveStorages, _loop.GameUpdate);
         }
         
         public void Play()
@@ -35,7 +35,7 @@ namespace NotEnoughMemory.Game
             _menu.Open();
             _uiFactory.Create();
             _inputsFactory.Create();
-            _loop.Update();
+            _loop.StartUpdating();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using NotEnoughMemory.View;
+using UnityEngine;
 
 namespace NotEnoughMemory.Model
 {
@@ -8,6 +9,8 @@ namespace NotEnoughMemory.Model
         
         Sprite Icon { get; }
         
-        ParticleSystem ParticlePrefab { get; }
+        string Name { get; }
+        
+        IEffect Effect { get; }
     }
 }

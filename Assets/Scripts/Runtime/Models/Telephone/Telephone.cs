@@ -21,7 +21,7 @@ namespace NotEnoughMemory.Model
         public void Update(float deltaTime)
         {
             var memoryFillingAmount = Memory.Amount;
-            var maxMemoryFillingAmount = _telephoneView.Data.NeedMemoryFillingAmount;
+            var maxMemoryFillingAmount = _telephoneView.CurrentData.NeedMemoryFillingAmount;
             _memoryView.Visualize(maxMemoryFillingAmount, Memory.Amount);
 
             if (_telephoneView.ReadyToSwitchAppearance(memoryFillingAmount))
@@ -37,7 +37,7 @@ namespace NotEnoughMemory.Model
                 throw new InvalidOperationException("Telephone is already broken!");
             
             Memory.Break();
-            _telephoneView.SwitchAppearanceToBroken();
+            _telephoneView.Break();
             IsBroken = true;
         }
 
@@ -47,7 +47,7 @@ namespace NotEnoughMemory.Model
                 throw new InvalidOperationException("Telephone is already fixed!");
             
             Memory.Fix();
-            _telephoneView.SwitchAppearanceToFixed();
+            _telephoneView.Fix();
             IsBroken = false;
         }
     }

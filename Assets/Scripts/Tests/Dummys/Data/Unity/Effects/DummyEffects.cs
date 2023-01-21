@@ -5,7 +5,7 @@ namespace NotEnoughMemory.Tests.Dummys
 {
     public sealed class DummyEffects : IEffects
     {
-        public ITelephonePressEffect TelephonePress => new DummyTelephonePressEffect();
+        public IEffect TelephonePress => new DummyEffect();
         
         
     }

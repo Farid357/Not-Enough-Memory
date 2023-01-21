@@ -2,7 +2,6 @@
 {
     public interface IGameLoop : IReadOnlyGameLoop
     {
-
-        void Update();
+        void StartUpdating();
     }
 }

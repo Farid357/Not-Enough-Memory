@@ -1,9 +1,7 @@
-﻿using NotEnoughMemory.Model;
-
-namespace NotEnoughMemory.View
+﻿namespace NotEnoughMemory.View
 {
     public interface IEffects
     {
-        ITelephonePressEffect TelephonePress { get; }
+        IEffect TelephonePress { get; }
     }
 }

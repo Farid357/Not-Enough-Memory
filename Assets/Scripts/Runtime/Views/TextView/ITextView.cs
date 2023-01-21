@@ -5,5 +5,6 @@
         void Visualize(string line);
 
         void Visualize(int count);
+        
     }
 }

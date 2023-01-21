@@ -1,7 +1,9 @@
 ﻿using NotEnoughMemory.Game;
 using NotEnoughMemory.Model;
+using NotEnoughMemory.SceneLoading;
 using NotEnoughMemory.View;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace NotEnoughMemory
 {
@@ -13,7 +15,7 @@ namespace NotEnoughMemory
         
         private void Awake()
         {
-            IGameEngine gameEngine = new Game.Unity(_views, _ui, _scenes);
+            IGameEngine gameEngine = new Game.Unity(_views, _ui, _scenes, new UnitySceneLoader(LoadSceneMode.Single));
             IGame game = new Game.Game(gameEngine);
             game.Play();
         }

@@ -1,4 +1,5 @@
 ﻿using NotEnoughMemory.Model;
+using NotEnoughMemory.SceneLoading;
 using NotEnoughMemory.UI;
 using NotEnoughMemory.View;
 
@@ -12,5 +13,6 @@ namespace NotEnoughMemory.Game
         
         IScenes Scenes { get; }
         
+        ISceneLoader SceneLoader { get; }
     }
 }

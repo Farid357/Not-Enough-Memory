@@ -7,7 +7,7 @@ namespace NotEnoughMemory.View
     {
         [SerializeField] private TelephonePressEffect _telephonePress;
 
-        public ITelephonePressEffect TelephonePress => _telephonePress;
+        public IEffect TelephonePress => _telephonePress;
 
     }
 }

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8206378454f44d30b83e147a126b880a, type: 3}
   m_Name: Telephone Data
   m_EditorClassIdentifier: 
+  _particlePrefab: {fileID: 3735017986533767851, guid: 6f14a6d5a7e60d44f9dd9ae492b85a9e, type: 3}
   <NeedMemoryFillingAmount>k__BackingField: 10
   <Icon>k__BackingField: {fileID: 21300000, guid: 3a1c814279923764e9f31807f4adf0a1, type: 3}
+  <Name>k__BackingField: First
   <BrokenIcon>k__BackingField: {fileID: 21300000, guid: cd43d051590418144af5a4c8f1658ceb, type: 3}
-  <ParticlePrefab>k__BackingField: {fileID: 3735017986533767851, guid: 6f14a6d5a7e60d44f9dd9ae492b85a9e, type: 3}

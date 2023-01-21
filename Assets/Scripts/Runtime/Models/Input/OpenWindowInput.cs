@@ -1,5 +1,4 @@
 ﻿using System;
-using NotEnoughMemory.Game;
 using NotEnoughMemory.Game.Loop;
 using NotEnoughMemory.UI;
 

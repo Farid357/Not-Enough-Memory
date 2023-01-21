@@ -11,7 +11,10 @@ namespace NotEnoughMemory.View
         [SerializeField] private TelephonePressEffect _telephonePressEffect;
         [SerializeField] private Effects _effects;
         [SerializeField] private Audios _audios;
-
+        [SerializeField] private ViewsFactories _factories;
+        
+        public IViewsFactories Factories => _factories;
+        
         public IEffects Effects => _effects;
 
         public IAudios Audios => _audios;

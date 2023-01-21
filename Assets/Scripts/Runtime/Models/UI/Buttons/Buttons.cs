@@ -7,7 +7,7 @@ namespace NotEnoughMemory.UI
     {
         private readonly IEnumerable<IButton> _buttons;
 
-        public Buttons(IEnumerable<IButton> buttons)
+        public Buttons(params IButton[] buttons)
         {
             _buttons = buttons ?? throw new ArgumentNullException(nameof(buttons));
         }

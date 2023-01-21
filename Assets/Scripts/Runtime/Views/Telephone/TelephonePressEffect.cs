@@ -1,18 +1,27 @@
-﻿using UnityEngine;
+﻿using System;
+using NotEnoughMemory.View;
+using UnityEngine;
 
 namespace NotEnoughMemory.Model
 {
-    public sealed class TelephonePressEffect : MonoBehaviour, ITelephonePressEffect
+    public sealed class TelephonePressEffect : MonoBehaviour, IEffect
     {
-        [SerializeField] private Transform _spawnPosition;
         [SerializeField] private TelephoneView _telephoneView;
-
-        private ParticleSystem ParticlePrefab => _telephoneView.Data.ParticlePrefab;
+        [SerializeField] private Transform _transform;
         
+        private IEffect Effect => _telephoneView.CurrentData.Effect;
+
         public void Play()
         {
-            var particle = Instantiate(ParticlePrefab, _spawnPosition.position, Quaternion.identity);
-            particle.Play();
+            Effect.PlayIn(new ConstantTransformData(_transform.position, Quaternion.identity));
+        }
+
+        public void PlayIn(ITransformData transform)
+        {
+            if (transform == null) 
+                throw new ArgumentNullException(nameof(transform));
+            
+            Effect.PlayIn(transform);
         }
     }
 }

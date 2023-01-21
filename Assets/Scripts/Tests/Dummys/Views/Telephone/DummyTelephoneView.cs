@@ -1,4 +1,5 @@
-﻿using NotEnoughMemory.Model;
+﻿using System.Collections.Generic;
+using NotEnoughMemory.Model;
 using UnityEngine;
 
 namespace NotEnoughMemory.Tests.Dummys
@@ -12,7 +13,9 @@ namespace NotEnoughMemory.Tests.Dummys
             _readyToSwitchAppearance = readyToSwitchAppearance;
         }
 
-        public ITelephoneData Data => ScriptableObject.CreateInstance<TelephoneData>();
+        public ITelephoneData CurrentData { get; } = ScriptableObject.CreateInstance<TelephoneData>();
+
+        public IReadOnlyList<ITelephoneData> AllData => new List<ITelephoneData> { CurrentData };
 
         public bool ReadyToSwitchAppearance(int memoryFillingAmount)
         {
@@ -21,17 +24,14 @@ namespace NotEnoughMemory.Tests.Dummys
 
         public void SwitchAppearance(int memoryFillingAmount)
         {
-
         }
 
-        public void SwitchAppearanceToBroken()
+        public void Break()
         {
-            
         }
 
-        public void SwitchAppearanceToFixed()
+        public void Fix()
         {
-            
         }
     }
 }

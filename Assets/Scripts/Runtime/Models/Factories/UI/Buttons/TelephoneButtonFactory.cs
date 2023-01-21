@@ -2,17 +2,18 @@
 using NotEnoughMemory.Audio;
 using NotEnoughMemory.Model;
 using NotEnoughMemory.UI;
+using NotEnoughMemory.View;
 
 namespace NotEnoughMemory.Factories
 {
     public sealed class TelephoneButtonFactory : IFactory<ITelephoneButton>
     {
-        private readonly ITelephonePressEffect _telephonePressEffect;
+        private readonly IEffect _telephonePressEffect;
         private readonly IWallet _wallet;
         private readonly ITelephone _telephone;
         private readonly IAudio _telephonePressAudio;
 
-        public TelephoneButtonFactory(ITelephonePressEffect telephonePressEffect, IWallet wallet, ITelephone telephone, IAudio telephonePressAudio)
+        public TelephoneButtonFactory(IEffect telephonePressEffect, IWallet wallet, ITelephone telephone, IAudio telephonePressAudio)
         {
             _telephonePressEffect = telephonePressEffect ?? throw new ArgumentNullException(nameof(telephonePressEffect));
             _wallet = wallet ?? throw new ArgumentNullException(nameof(wallet));
@@ -22,12 +23,7 @@ namespace NotEnoughMemory.Factories
 
         public ITelephoneButton Create()
         {
-            var buttons = new Buttons(new IButton[] 
-            {
-                new TelephonePressAudioPlayButton(_telephonePressAudio),
-                new TelephonePressEffectPlayButton(_telephonePressEffect)
-            });
-            
+            var buttons = new Buttons(new AudioPlayButton(_telephonePressAudio), new EffectPlayButton(_telephonePressEffect));
             return new TelephoneButton(_telephone, buttons, _wallet);
         }
     }

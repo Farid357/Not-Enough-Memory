@@ -1,15 +1,19 @@
-﻿namespace NotEnoughMemory.Model
+﻿using System.Collections.Generic;
+
+namespace NotEnoughMemory.Model
 {
     public interface ITelephoneView
     {
-        ITelephoneData Data { get; }
+        ITelephoneData CurrentData { get; }
+        
+        IReadOnlyList<ITelephoneData> AllData { get; }
         
         bool ReadyToSwitchAppearance(int memoryFillingAmount);
         
         void SwitchAppearance(int memoryFillingAmount);
         
-        void SwitchAppearanceToBroken();
+        void Break();
 
-        void SwitchAppearanceToFixed();
+        void Fix();
     }
 }
