@@ -2,6 +2,7 @@
 ![2023-02-02](https://user-images.githubusercontent.com/104379303/216370919-792a41f5-fc8f-4217-9204-07652dfeff08.png)
 ![2023-02-02 (1)](https://user-images.githubusercontent.com/104379303/216371036-74784f0c-7215-4fcc-9907-b90b5585cdd8.png)
 ![2023-02-02 (2)](https://user-images.githubusercontent.com/104379303/216370934-e35edcac-094d-42fa-987f-06e17d24437b.png)
+![2023-02-02 (3)](https://user-images.githubusercontent.com/104379303/216377173-1e4ce8b7-413a-4f4b-96e2-7ff42084823e.png)
 
 # **О проекте**
   <font size="48"> Учебный проект - **кликер**, попробуйте не сломать телефон, приобрести новый и заработать кучу денег!
