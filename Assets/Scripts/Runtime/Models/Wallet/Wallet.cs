@@ -19,19 +19,15 @@ namespace NotEnoughMemory.Model
 
         public Money Money { get; private set; }
         
-        public bool HasMoneyChanged { get; private set; }
-
         public void Put(Money money)
         {
             Money += money;
-            HasMoneyChanged = true;
             VisualizeAndSave(Money);
         }
 
         public void Take(Money money)
         {
             Money -= money;
-            HasMoneyChanged = true;
             VisualizeAndSave(Money);
         }
 
@@ -39,11 +35,6 @@ namespace NotEnoughMemory.Model
         {
             _textView.Visualize(money);
             _storage.Save(money);
-        }
-
-        public void LateUpdate()
-        {
-            HasMoneyChanged = false;
         }
     }
 }

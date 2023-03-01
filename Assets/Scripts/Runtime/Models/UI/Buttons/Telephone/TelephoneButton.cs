@@ -3,27 +3,24 @@ using NotEnoughMemory.Model;
 
 namespace NotEnoughMemory.UI
 {
-    public sealed class TelephoneButton : ITelephoneButton
+    public sealed class TelephoneButton : IButton
     {
-        private readonly ITelephoneBreaker _telephoneBreaker;
-        private readonly IButton _button;
         private readonly IWallet _wallet;
+        private readonly IRandom _telephoneBrakeRandom;
         private readonly Money _addingMoney = new(1);
 
-        public TelephoneButton(ITelephone telephone, IButton button, IWallet wallet)
+        public TelephoneButton(ITelephone telephone, IWallet wallet, IRandom telephoneBrakeRandom)
         {
             Telephone = telephone ?? throw new ArgumentNullException(nameof(telephone));
-            _button = button ?? throw new ArgumentNullException(nameof(button));
             _wallet = wallet ?? throw new ArgumentNullException(nameof(wallet));
-            _telephoneBreaker = new TelephoneBreaker();
+            _telephoneBrakeRandom = telephoneBrakeRandom ?? throw new ArgumentNullException(nameof(telephoneBrakeRandom));
         }
 
         public ITelephone Telephone { get; }
 
         public void Press()
         {
-            _button.Press();
-            var memory = Telephone.Memory;
+            IMemory memory = Telephone.Memory;
 
             if (Telephone.IsBroken)
             {
@@ -35,7 +32,9 @@ namespace NotEnoughMemory.UI
             {
                 _wallet.Put(_addingMoney);
                 memory.Fill(1);
-                _telephoneBreaker.TryBreak(Telephone);
+
+                if (_telephoneBrakeRandom.TryLuck())
+                    Telephone.Break();
             }
         }
     }

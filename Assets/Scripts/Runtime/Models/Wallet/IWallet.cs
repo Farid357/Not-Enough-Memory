@@ -1,12 +1,8 @@
-﻿using NotEnoughMemory.Game.Loop;
-
-namespace NotEnoughMemory.Model
+﻿namespace NotEnoughMemory.Model
 {
-    public interface IWallet : ILateUpdateable
+    public interface IWallet
     {
         Money Money { get; }
-        
-        bool HasMoneyChanged { get; }
 
         void Take(Money money);
 

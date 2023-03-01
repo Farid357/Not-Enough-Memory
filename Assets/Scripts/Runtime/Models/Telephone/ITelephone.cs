@@ -2,7 +2,7 @@
 
 namespace NotEnoughMemory.Model
 {
-    public interface ITelephone : IUpdateable
+    public interface ITelephone : IGameLoopObject
     {
         bool IsBroken { get; }
         

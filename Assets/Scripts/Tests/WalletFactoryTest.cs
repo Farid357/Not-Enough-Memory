@@ -13,7 +13,7 @@ namespace NotEnoughMemory.Tests
         public void CreatesCorrectlyWithSave()
         {
             var savedMoney = new Money(50);
-            IFactory<IWallet> factory = new WalletFactory(new DummyTextView(),new LateGameUpdate(),
+            IFactory<IWallet> factory = new WalletFactory(new DummyTextView(),
                 new DummySaveStorages());
 
             var createdWallet = factory.Create();

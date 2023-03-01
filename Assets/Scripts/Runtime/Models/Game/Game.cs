@@ -22,12 +22,12 @@ namespace NotEnoughMemory.Game
             _menu = new Menu.Menu(engine);
             IUI ui = engine.UI;
             ISaveStorages saveStorages = new SaveStorages();
-            IFactory<IWallet> walletFactory = new WalletFactory(new TextView(ui.Texts.Money), _loop.LateGameUpdate, saveStorages);
+            IFactory<IWallet> walletFactory = new WalletFactory(new TextView(ui.Texts.Money), saveStorages);
             IWallet wallet = walletFactory.Create();
-            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(_loop, engine, wallet);
+            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(engine, wallet);
             ITelephone telephone = telephoneFactory.Create();
-            _inputsFactory = new InputsFactory(ui.Windows, _loop.GameUpdate);
-            _uiFactory = new GameUIFactory(engine, saveStorages, _loop.GameUpdate);
+            _inputsFactory = new InputsFactory(ui.Windows, _loop.Objects);
+            _uiFactory = new GameUIFactory(engine, saveStorages, _loop.Objects);
         }
         
         public void Play()
@@ -35,7 +35,7 @@ namespace NotEnoughMemory.Game
             _menu.Open();
             _uiFactory.Create();
             _inputsFactory.Create();
-            _loop.StartUpdating();
+            _loop.Start();
         }
     }
 }

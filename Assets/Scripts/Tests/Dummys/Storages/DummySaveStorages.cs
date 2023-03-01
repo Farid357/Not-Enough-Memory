@@ -7,7 +7,7 @@ namespace NotEnoughMemory.Tests
     {
         public bool HasSaves() => false;
 
-        public void Add(ICanDeleteSaveStorage storage)
+        public void Add(ISaveStorage storage)
         {
            
         }

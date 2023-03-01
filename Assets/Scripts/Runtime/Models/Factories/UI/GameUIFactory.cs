@@ -12,13 +12,13 @@ namespace NotEnoughMemory.Factories
     {
         private readonly IGameEngine _gameEngine;
         private readonly ISaveStorages _saveStorages;
-        private readonly IGameUpdate _gameUpdate;
+        private readonly IGameLoopObjects _gameLoopObjects;
 
-        public GameUIFactory(IGameEngine gameEngine, ISaveStorages saveStorages, IGameUpdate gameUpdate)
+        public GameUIFactory(IGameEngine gameEngine, ISaveStorages saveStorages, IGameLoopObjects gameLoopObjects)
         {
             _gameEngine = gameEngine ?? throw new ArgumentNullException(nameof(gameEngine));
             _saveStorages = saveStorages ?? throw new ArgumentNullException(nameof(saveStorages));
-            _gameUpdate = gameUpdate ?? throw new ArgumentNullException(nameof(gameUpdate));
+            _gameLoopObjects = gameLoopObjects ?? throw new ArgumentNullException(nameof(gameLoopObjects));
         }
 
         public void Create()
@@ -31,7 +31,7 @@ namespace NotEnoughMemory.Factories
             ui.GameEngineButtons.CloseExitWindow.Init(new CloseWindowButton(windows.Exit));
             IAudio music = new Music(views.Audios.Music);
             IUISettingsFactory uiSettingsFactory = new UISettingsFactory(_gameEngine.UI, _saveStorages, music);
-            ITelephoneScrollViewFactory telephoneScrollViewFactory = new TelephoneScrollViewFactory(_gameUpdate, views.Telephone,
+            ITelephoneScrollViewFactory telephoneScrollViewFactory = new TelephoneScrollViewFactory(_gameLoopObjects, views.Telephone,
                     views.Factories.TelephoneScrollItemsFactory);
 
             ITelephonesScrollView telephonesScrollView = telephoneScrollViewFactory.Create();

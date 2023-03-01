@@ -7,8 +7,6 @@ namespace NotEnoughMemory.Model
     {
         public bool IsBroken { get; private set; }
         
-        public bool HasAmountChanged { get; private set; }
-        
         public int Amount { get; private set; }
 
         public void Fill(int amount)
@@ -17,10 +15,7 @@ namespace NotEnoughMemory.Model
                 throw new InvalidOperationException("Memory is broken, you can't fill it!");
             
             Amount += amount.ThrowIfLessThanOrEqualsToZeroException();
-            HasAmountChanged = true;
         }
-
-        public void Clear() => Clear(Amount);
 
         public void Break()
         {
@@ -46,12 +41,6 @@ namespace NotEnoughMemory.Model
                 throw new InvalidOperationException("Can't clear amount!");
 
             Amount -= amount.ThrowIfLessThanOrEqualsToZeroException();
-            HasAmountChanged = true;
-        }
-
-        public void LateUpdate()
-        {
-            HasAmountChanged = false;
         }
     }
 }

@@ -9,18 +9,18 @@ namespace NotEnoughMemory.Game
     public sealed class InputsFactory : IInputsFactory
     {
         private readonly IWindows _windows;
-        private readonly IGameUpdate _gameUpdate;
+        private readonly IGameLoopObjects _gameLoopObjects;
 
-        public InputsFactory(IWindows windows, IGameUpdate gameUpdate)
+        public InputsFactory(IWindows windows, IGameLoopObjects gameLoopObjects)
         {
             _windows = windows ?? throw new ArgumentNullException(nameof(windows));
-            _gameUpdate = gameUpdate ?? throw new ArgumentNullException(nameof(gameUpdate));
+            _gameLoopObjects = gameLoopObjects ?? throw new ArgumentNullException(nameof(gameLoopObjects));
         }
 
         public void Create()
         {
             var openExitWindowInput = new OpenWindowInput(new KeyDownInput(KeyCode.Escape), _windows.Exit);
-            _gameUpdate.Add(openExitWindowInput);
+            _gameLoopObjects.Add(openExitWindowInput);
         }
     }
 }

@@ -1,11 +1,7 @@
-﻿using NotEnoughMemory.Game.Loop;
-
-namespace NotEnoughMemory.Model
+﻿namespace NotEnoughMemory.Model
 {
-    public interface IMemory : IReadOnlyMemory, ILateUpdateable
+    public interface IMemory : IReadOnlyMemory
     {
-        void Clear();
-
         void Clear(int amount);
 
         void Break();

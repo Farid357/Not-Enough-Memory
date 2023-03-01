@@ -9,13 +9,13 @@ namespace NotEnoughMemory.Factories
 {
     public sealed class TelephoneScrollViewFactory : ITelephoneScrollViewFactory
     {
-        private readonly IGameUpdate _gameUpdate;
+        private readonly IGameLoopObjects _gameLoopObjects;
         private readonly ITelephoneView _telephoneView;
         private readonly ITelephoneScrollItemsFactory _scrollItemsFactory;
 
-        public TelephoneScrollViewFactory(IGameUpdate gameUpdate, ITelephoneView telephoneView, ITelephoneScrollItemsFactory scrollItemsFactory)
+        public TelephoneScrollViewFactory(IGameLoopObjects gameLoopObjects, ITelephoneView telephoneView, ITelephoneScrollItemsFactory scrollItemsFactory)
         {
-            _gameUpdate = gameUpdate ?? throw new ArgumentNullException(nameof(gameUpdate));
+            _gameLoopObjects = gameLoopObjects ?? throw new ArgumentNullException(nameof(gameLoopObjects));
             _telephoneView = telephoneView ?? throw new ArgumentNullException(nameof(telephoneView));
             _scrollItemsFactory = scrollItemsFactory ?? throw new ArgumentNullException(nameof(scrollItemsFactory));
         }
@@ -25,7 +25,7 @@ namespace NotEnoughMemory.Factories
             IPath telephoneSavesPath = new Path("Telephone Saves");
             ISaveStorage<List<TelephoneSaveData>> telephoneSaveDataStorage = new BinaryStorage<List<TelephoneSaveData>>(telephoneSavesPath);
             var telephonesScrollView = new TelephonesScrollView(_telephoneView, _scrollItemsFactory, telephoneSaveDataStorage);
-            _gameUpdate.Add(telephonesScrollView);
+            _gameLoopObjects.Add(telephonesScrollView);
             return telephonesScrollView;
         }
     }

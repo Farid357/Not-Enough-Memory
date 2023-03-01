@@ -2,10 +2,6 @@
 {
     public interface IReadOnlyGameLoop
     {
-        ILateGameUpdate LateGameUpdate { get; }
-        
-        IFixedGameUpdate FixedGameUpdate { get; }
-        
-        IGameUpdate GameUpdate { get; }
+        IGameLoopObjects Objects { get; }
     }
 }

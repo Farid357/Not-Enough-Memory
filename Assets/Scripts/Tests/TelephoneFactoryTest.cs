@@ -14,7 +14,7 @@ namespace NotEnoughMemory.Tests
         {
             IMemory memory = new DummyMemory();
             IGameEngine gameEngine = new Game.Unity(new DummyViews(), new DummyUI(), new DummyScenes(), new DummySceneLoader());
-            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(new Game.Loop.GameLoop(new UnscaledGameTime()), gameEngine, new DummyWallet());
+            IFactory<ITelephone> telephoneFactory = new TelephoneFactory(gameEngine, new DummyWallet());
             ITelephone createdTelephone = telephoneFactory.Create();
             Assert.That(createdTelephone.Memory == memory);
         }

@@ -3,10 +3,11 @@ using NotEnoughMemory.Audio;
 using NotEnoughMemory.Model;
 using NotEnoughMemory.UI;
 using NotEnoughMemory.View;
+using Random = NotEnoughMemory.Model.Random;
 
 namespace NotEnoughMemory.Factories
 {
-    public sealed class TelephoneButtonFactory : IFactory<ITelephoneButton>
+    public sealed class TelephoneButtonFactory : IFactory<IButton>
     {
         private readonly IEffect _telephonePressEffect;
         private readonly IWallet _wallet;
@@ -21,10 +22,10 @@ namespace NotEnoughMemory.Factories
             _telephonePressAudio = telephonePressAudio ?? throw new ArgumentNullException(nameof(telephonePressAudio));
         }
 
-        public ITelephoneButton Create()
+        public IButton Create()
         {
             var buttons = new Buttons(new AudioPlayButton(_telephonePressAudio), new EffectPlayButton(_telephonePressEffect));
-            return new TelephoneButton(_telephone, buttons, _wallet);
+            return new Buttons(new TelephoneButton(_telephone, _wallet, new Random(new OneQuarterChance())), buttons);
         }
     }
 }

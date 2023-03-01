@@ -27,7 +27,7 @@ namespace NotEnoughMemory.Model
             if (_telephoneView.ReadyToSwitchAppearance(memoryFillingAmount))
             {
                 _telephoneView.SwitchAppearance(memoryFillingAmount);
-                Memory.Clear();
+                Memory.Clear(Memory.Amount);
             }
         }
         

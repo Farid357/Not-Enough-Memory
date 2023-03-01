@@ -8,7 +8,7 @@ using NotEnoughMemory.Storage;
 
 namespace NotEnoughMemory.View
 {
-    public sealed class TelephonesScrollView : IUpdateable, ITelephonesScrollView
+    public sealed class TelephonesScrollView : IGameLoopObject, ITelephonesScrollView
     {
         private readonly ITelephoneView _telephoneView;
         private readonly ITelephoneScrollItemsFactory _factory;

@@ -18,7 +18,7 @@ namespace NotEnoughMemory.Tests
         {
             IMemory memory = new Memory();
             memory.Fill(1);
-            memory.Clear();
+            memory.Clear(memory.Amount);
             Assert.That(memory.Amount == 0);
         }
 
