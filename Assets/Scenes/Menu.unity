@@ -316,19 +316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89daa5b2799a4a618609b133f9c1a265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _spawnData:
-    _prefab: {fileID: 3927541324151070120, guid: 9bc795d81d0b9ce4ba846528690009da, type: 3}
-    _spawnPoint: {fileID: 0}
-    _parent: {fileID: 2068353634}
+  _prefab: {fileID: 3927541324151070120, guid: 9bc795d81d0b9ce4ba846528690009da, type: 3}
+  _content: {fileID: 2068353634}
 --- !u!114 &560183675
 MonoBehaviour:
   m_ObjectHideFlags: 0

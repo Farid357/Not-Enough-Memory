@@ -9,7 +9,7 @@ namespace NotEnoughMemory.Tests.Dummys
         {
         }
 
-        public void PlayIn(ITransformData transform)
+        public void PlayIn(ITransform transform)
         {
             
         }

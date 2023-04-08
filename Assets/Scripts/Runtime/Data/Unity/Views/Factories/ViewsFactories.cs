@@ -7,7 +7,7 @@ namespace NotEnoughMemory.View
 {
     public sealed class ViewsFactories : SerializedMonoBehaviour, IViewsFactories
     {
-        [SerializeField] private MonoTelephoneScrollItemsFactory _telephoneScrollItemsFactory;
+        [SerializeField] private TelephoneScrollItemsFactory _telephoneScrollItemsFactory;
 
         public ITelephoneScrollItemsFactory TelephoneScrollItemsFactory => _telephoneScrollItemsFactory;
     }

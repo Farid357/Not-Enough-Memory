@@ -9,13 +9,10 @@ namespace NotEnoughMemory.UI
     {
         private readonly Image _image;
 
-        public UnityImage(Image image, IGameObjectWithTransform gameObject)
+        public UnityImage(Image image)
         {
             _image = image ?? throw new ArgumentNullException(nameof(image));
-            GameObject = gameObject ?? throw new ArgumentNullException(nameof(gameObject));
         }
-        
-        public IGameObjectWithTransform GameObject { get; }
         
         public void Visualize(Sprite sprite)
         {

@@ -6,6 +6,6 @@ namespace NotEnoughMemory.View
     {
         void Play();
         
-        void PlayIn(ITransformData transform);
+        void PlayIn(ITransform transform);
     }
 }

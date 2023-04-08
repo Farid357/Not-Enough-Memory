@@ -2,9 +2,9 @@
 
 namespace NotEnoughMemory.Model
 {
-    public sealed class ConstantTransformData : ITransformData
+    public sealed class Transform : ITransform
     {
-        public ConstantTransformData(Vector3 position, Quaternion rotation)
+        public Transform(Vector3 position, Quaternion rotation)
         {
             Position = position;
             Rotation = rotation;

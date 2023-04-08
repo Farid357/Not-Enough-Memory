@@ -7,14 +7,14 @@ namespace NotEnoughMemory.UI
     public sealed class EffectPlayButton : IButton
     {
         private readonly IEffect _effect;
-        private readonly ITransformData _playingTransform;
+        private readonly ITransform _playingTransform;
 
         public EffectPlayButton(IEffect effect)
         {
             _effect = effect ?? throw new ArgumentNullException(nameof(effect));
         }
         
-        public EffectPlayButton(IEffect effect, ITransformData playingTransform) : this(effect)
+        public EffectPlayButton(IEffect effect, ITransform playingTransform) : this(effect)
         {
             _playingTransform = playingTransform ?? throw new ArgumentNullException(nameof(playingTransform));
         }

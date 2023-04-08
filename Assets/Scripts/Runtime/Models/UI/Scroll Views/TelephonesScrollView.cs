@@ -31,7 +31,7 @@ namespace NotEnoughMemory.View
             foreach (var telephoneSaveData in _telephoneSaveData)
             {
                 ITelephoneData telephoneData = telephoneSaveData.FindSameFrom(_telephoneView.AllData);
-                _factory.CreateFrom(telephoneData).Visualize();
+                _factory.Create(telephoneData).Visualize();
                 _usedTelephoneData.Add(telephoneData);
             }
         }
@@ -45,7 +45,7 @@ namespace NotEnoughMemory.View
                 _usedTelephoneData.Add(currentData);
                 var telephoneSaveData = new TelephoneSaveData(currentData.Name, currentData.Icon.name, currentData.NeedMemoryFillingAmount);
                 _telephoneSaveData.Add(telephoneSaveData);
-                _factory.CreateFrom(currentData).Visualize();
+                _factory.Create(currentData).Visualize();
                 _telephoneDataStorage.Save(_telephoneSaveData);
             }
         }

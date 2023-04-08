@@ -4,6 +4,6 @@ namespace NotEnoughMemory.Factories
 {
     public interface ITelephoneScrollItemsFactory
     {
-        IScrollItem CreateFrom(ITelephoneData telephoneData);
+        IScrollItem Create(ITelephoneData telephoneData);
     }
 }

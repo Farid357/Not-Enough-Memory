@@ -11,7 +11,7 @@ namespace NotEnoughMemory.View
 
         public Effect(ParticleSystem prefab)
         {
-            _prefab = prefab ?? throw new ArgumentNullException(nameof(prefab));
+            _prefab = prefab ? prefab : throw new ArgumentNullException(nameof(prefab));
         }
 
         public void Play()
@@ -19,7 +19,7 @@ namespace NotEnoughMemory.View
             Object.Instantiate(_prefab).Play();
         }
 
-        public void PlayIn(ITransformData transform)
+        public void PlayIn(ITransform transform)
         {
             if (transform == null)
                 throw new ArgumentNullException(nameof(transform));

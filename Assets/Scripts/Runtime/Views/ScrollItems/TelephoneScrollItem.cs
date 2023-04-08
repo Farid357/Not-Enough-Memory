@@ -23,7 +23,7 @@ namespace NotEnoughMemory.Model
         
         public void Visualize()
         {
-            IGameEngineImage image = new UnityImage(_image, new GameObject(_image.gameObject, new ObjectTransformData(_image.transform)));
+            IGameEngineImage image = new UnityImage(_image);
             ITextView nameText = new TextView(_nameText);
             ITextView needMemoryText = new TextView(_needMemoryText);
             IScrollItemView view = new TelephoneScrollItemView(image, nameText, needMemoryText, _telephoneData);
